@@ -1,0 +1,555 @@
+/*create table page*/
+.striped-gradient {
+    height: 5px;
+    border-top: 0;
+    background: #c4e17f;
+    border-radius: 5px;
+    background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+}
+
+.form-group input[type=number] {
+    height: auto;
+    font-size: 13px;
+}
+
+
+
+#attc_table_admin.table>tbody>tr.header >td textarea.attc_textarea{
+    color: #e74c3c;
+    font-weight: 600;
+    font-size: 14px;
+}
+/*All Tables list page*/
+th#ID {
+    width: 60px;
+}
+.tablenav-pages-navspan {
+    height: 28px;
+    width: 25px;
+    margin-right: 5px;
+}
+.tablenav-pages .current-page {
+    width: 30px;
+    height: 28px;
+}
+
+/*
+Edit table
+*/
+.attc_textarea {
+    border: 0;
+    box-shadow: 0 0 0;
+    display: block;
+    background: transparent;
+    padding: 10px;
+}
+.attc_textarea.expand{
+    min-height: 80px;
+}
+.attc_textarea:focus{
+    outline: none;
+    box-shadow: 0 0 0;
+}
+.support_title{
+    margin-bottom: 35px;
+    font-size: 24px;
+    line-height: 26px;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-family: 'Roboto',sans-serif;
+}
+input[type='checkbox']:focus{
+    outline: none!important;
+    box-shadow: 0 0 0!important;
+}
+#attc_table_admin.table>tbody>tr td.first_td input,
+#attc_table_admin.table>tbody>tr td.first_td span{
+    margin-top: 20px;
+}
+#attc_table_admin.table>tbody>tr td.first_td:nth-child(2) {
+    border-left: 0!important;
+}
+#attc_table_admin.table>thead>tr>th.first_th:nth-child(1) ,
+#attc_table_admin.table>thead>tr>th.first_th:nth-child(2){
+    border-left: 0!important;
+    border-right: 0!important;
+    color: #fff;
+}
+
+#attc-edit-view-wrap{
+    overflow: auto;
+    overflow-y: hidden;
+}
+.table-info-wrap,.table-option-wrap{
+    width: 500px;
+    float: left;
+}
+.table-info-wrap {
+    margin-right: 30px;
+}
+.table-option-wrap {
+    margin-top: 50px;
+}
+
+.attc-thead{
+    background: #e74c3c;
+}
+.attc-thead tr th span{
+    color: #fff;
+}
+.attc-thead tr th input[type="checkbox"]{
+    float: right;
+    margin: 2px 0 0;
+}
+
+#attc_table_admin .table-bordered>thead>tr>td, .table-bordered>thead>tr>th{
+    border-bottom-width: 1px;
+    border-color: #f38175;
+}
+#attc_table_admin.table-bordered>tbody>tr>td,
+#attc_table_admin.table-bordered>tbody>tr>th,
+#attc_table_admin.table-bordered>tfoot>tr>td,
+#attc_table_admin.table-bordered>tfoot>tr>th,
+#attc_table_admin.table-bordered>thead>tr>td,
+#attc_table_admin.table-bordered>thead>tr>th{
+    border-color: #dbdbdb;
+}
+#attc_table_admin.table>tbody>tr>td,
+#attc_table_admin.table>tbody>tr>th,
+#attc_table_admin.table>tfoot>tr>td,
+#attc_table_admin.table>tfoot>tr>th,
+#attc_table_admin.table>thead>tr>td,
+#attc_table_admin.table>thead>tr>th{
+    padding: 0;
+    font-size: 14px;
+    color: #666666;
+}
+#attc_table_admin.table>thead>tr>th {
+    padding: 12px 20px;
+}
+#attc_table_admin.table .table_heading td{
+    color: #e74c3c;
+    font-size: 14px;
+    font-weight: 600;
+}
+/*Scroll bar style*/
+#attc-edit-view-wrap::-webkit-scrollbar  {
+    width: 10px;
+}
+
+#attc-edit-view-wrap::-webkit-scrollbar-track-piece {
+    background: #ededed;
+    width: 5px;
+}
+
+#attc-edit-view-wrap::-webkit-scrollbar-thumb {
+    background: #ccc;
+    height: 5px;
+    border-radius: 15px;
+}
+.first_td:first-child{
+    border-right: 0!important;
+}
+/*Ajax Loader*/
+.attc_lp_ajax_loading {
+    background: url(/wp-admin/images/spinner-2x.gif) no-repeat center center;
+    margin-left: 10px;
+    display: inline-block;
+    min-height: 31px;
+    vertical-align: middle;
+    min-width: 37px;
+    background-size: contain;
+}
+
+/* Notification Style*/
+#attc-lp-notification {
+    min-height: 50px;
+    padding: 10px;
+    box-shadow: 0px 0px 13px #46b450;
+    position: fixed;
+    bottom: 3%;
+    right: 0%;
+    background-color: white;
+    transition: all .5s;
+    z-index: 9999;
+    border: 3px solid green;
+    color: #4CAF50;
+}
+
+#attc_close_it {
+    display: inline-block;
+    color: red;
+    border: 1px solid #ff0300;
+    border-radius: 50%;
+    height:30px;
+    width: 30px;
+    background-color: #ffffff;
+    cursor: pointer;
+    position: absolute;
+    line-height: 28px;
+    padding-left: 8px;
+    font-size: 19px;
+    top: -19px;
+    right: 0px;
+
+}
+#attc_table_admin {
+    clear: both;
+    margin-top: 30px;
+    width: auto;
+    background: #fff;
+}
+#attc-edit-view-wrap p.submit {
+    display: block;
+    clear: both;
+}
+.input.check {
+    padding-right:20px;
+}
+.option_toggler {
+    float: right;
+}
+.setting_options li {
+    overflow: hidden;
+    border-bottom: 1px solid #d7d7d7;
+    padding: 10px 0;
+    margin: 0;
+}
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 400;
+    vertical-align: middle;
+    padding-top: 9px;
+    width: calc(100% - 90px);
+    font-size: 16px;
+    font-family: 'Roboto',sans-serif;
+}
+.setting_options label.lable_for_input{
+    display: inline-block;
+    width: auto;
+}
+.option_toggler a {
+    background: #ddd;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 12px;
+    width: 40px;
+    float: left;
+    color: #c1c1c1;
+    text-align: center;
+    line-height: 38px;
+}
+.option_toggler a.active{
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2) inset;
+    background: #e74c3c;
+    color: #fff;
+}
+
+.setting_buttons .attc_btn.active{
+    background: transparent;
+    border: 2px solid #e74c3c;
+    color: #e74c3c;
+}
+input#config_height,
+input#config_width {
+    line-height: 28px;
+    border-radius: 3px;
+}
+option {
+    border-bottom: 1px solid #5b9dd9;
+    line-height: 39px;
+    display: block;
+    padding: 10px 5px;
+}
+.attc_import_view {
+    padding-top: 50px;
+}
+#attc_setting_form .attc_btn{
+    margin-top: 30px;
+    margin-right: 26px;
+}
+.setting_buttons .attc_btn{
+    margin-bottom: 40px;
+}
+.option_toggler a:first-child {
+    border-radius: 4px 0 0 4px;
+}
+.option_toggler a:last-child {
+    border-radius: 0 3px 3px 0px;
+}
+.attc_support {
+    text-align: center;
+    padding-bottom: 112px;
+}
+.attc_support .sup_title {
+    font-size: 30px;
+    font-weight: 400;
+    color: #333333;
+    font-family: "Roboto",sans-serif;
+}
+.attc_support p{
+    color: #666;
+    padding-top: 10px;
+    padding-bottom: 25px;
+    font-size: 14px;
+    line-height: 26px;
+}
+a.attc_btn{
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+}
+a.attc_btn:hover{
+    color: #fff;
+}
+.attc_support.rate{
+    padding-bottom: 39px;
+}
+.attc_support.rate ul{
+    margin-bottom: 0;
+}
+.attc_support.rate ul li{
+    display: inline-block;
+    font-size: 24px;
+    line-height: 26px;
+    color: #f9d900;
+    margin-bottom: 0;
+}
+.attc_support.rate p{
+    padding-bottom: 8px;
+}
+.attc_support.rate .sup_title{
+    color: #e74c3c;
+}
+select.attc_input_field {
+    height: 48px;
+    line-height: 48px;
+    padding: 0 20px;
+    width: 100%;
+    color: #929191;
+    margin-bottom: 0;
+    font-size: 14px;
+    width: 343px;
+    display: block;
+    font-family: 'Roboto',sans-serif;
+}
+.attc_btn span.glyphicon.glyphicon-download-alt {
+    margin-left: 6px;
+}
+.export_wrapper label{
+    font-size: 14px;
+    font-weight: 600;
+}
+.export_wrapper .input-group{
+    margin-top: 11px;
+}
+.export_wrapper h1 {
+    font-size: 30px;
+    color: #333;
+    padding-bottom: 30px;
+}
+.export_wrapper .attc_btn{
+    margin-top: 30px;
+}
+
+.attc_import_view{
+    text-align: center;
+}
+/*hahahah*/
+.js .inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+.upload_content{
+    background: #f5f5f5;
+    padding: 35px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+}
+.upload_wrapper {
+    margin-bottom: 50px;
+    position: relative;
+}
+.upload_wrapper:before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 60px;
+    background: #ccc;
+    left: 50%;
+    bottom: -21px;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+span.index_num {
+    margin-left: 8px;
+    display: inline-block;
+    vertical-align: -1px;
+}
+.inputfile + label {
+    max-width: 80%;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    padding: 30px 75px;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    border: 1px solid #ededed;
+    border-radius: 5px;
+    background: #fdfdfd;
+}
+.inputfile + label p{
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333;
+    font-family:"Roboto",sans-serif;
+}
+.no-js .inputfile + label {
+    display: none;
+    background: #e74c3c;
+}
+.inputfile + label span{
+    font-size: 24px;
+    color: #fcfcfc;
+    line-height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background: #ddd;
+    color: #e74c3c;
+    border: 1px solid #fff;
+}
+.inputfile:focus + label,
+.inputfile.has-focus + label {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+.inputfile + label * {
+    /* pointer-events: none; */
+    /* in case of FastClick lib use */
+}
+
+.inputfile + label svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+    margin-top: -0.25em;
+    /* 4px */
+    margin-right: 0.25em;
+    /* 4px */
+}
+
+
+
+
+
+
+/*  */
+@media (max-width: 1199px) {
+    .table_info_form{
+        margin-bottom: 30px;
+    }
+    .attc_setting_options{
+        width: 100%;
+    }
+    .attc_option{
+        display: inline-block;
+    }
+    .attc_setting_options:nth-child(1):before{
+        display: none;
+    }
+    .setting_buttons .attc_btn{
+        margin-bottom: 0;
+    }
+    input#config_height, input#config_width{
+        width: 90px;
+    }
+    .attc_support{
+        margin-bottom: 30px;
+    }
+}
+@media (max-width: 767px){
+    .board > div.board-inner {
+        width: 100px;
+        max-height: 100vh;
+        overflow-x: scroll;
+        transition: 0.3s;
+
+    }
+    .board > div.board-inner.fix_top{
+        position: fixed;
+        top: 0;
+    }
+    .board > div.board-inner.fix_top + .tab-content{
+        margin-left: 103px;
+    }
+    .board-inner ul.nav.nav-tabs li a p i{
+        font-size: 18px;
+        width: 50px;
+        line-height: 48px;
+    }
+    .board-inner ul.nav.nav-tabs li a p span{
+        font-size: 12px;
+        line-height: 24px;
+    }
+    .board .tab-content{
+        width: calc(100% - 120px);
+    }
+}
+
+
+/*Extension page style */
+    .single_extension{
+        width: 33.33%;
+        background: #f5f5f5;
+    }
+.single_extension p {
+    font-size: 14px;
+    color: #5c5c5c;
+    line-height: 24px;
+    font-weight: 400;
+}
+    .single_extension .extension_detail{
+        padding: 30px 25px;
+    }
+    .single_extension .btn_wrapper{
+        margin-top: 20px;
+    }
+    .single_extension .btn_wrapper a.btn:focus{
+        outline: none;
+        box-shadow: 0 0 0;
+    }
+    .single_extension .btn_wrapper a.btn.demo{
+        background: #6b91ef;
+        color: #fff;
+        margin-right: 10px;
+        text-transform: capitalize;
+    }
+    .single_extension .btn_wrapper a.btn.get{
+        background: #23c8f3;
+        color: #fff;
+        text-transform: capitalize;
+    }
+    .extension_detail a.ext_title h4{
+        font-weight: 600;
+        color: #333;
+        text-transform: capitalize;
+        display: inline-block;
+        font-family: 'Roboto', sans-serif;
+    }
+    .extension_detail a.ext_title:focus{
+        outline: 0;
+        box-shadow: 0 0 0;
+    }

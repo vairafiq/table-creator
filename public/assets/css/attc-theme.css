@@ -1,0 +1,177 @@
+/* Font Imported*/
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,600');
+
+.theme  .table_title{
+    font-size: 24px;
+    line-height: 26px;
+    font-weight: 300;
+    font-family: 'Roboto',sans-serif;
+}
+.theme .table_desc{
+    font-weight: 400;
+    margin: 0;
+    text-align: center;
+}
+.theme .dataTables_length label{
+    color: #808080;
+    font-weight: 400;
+    font-size: 14px;
+    font-family: 'Roboto',sans-serif;
+}
+.attc_front_table{
+    border-left: 1px solid #e8e8e8;
+    border-right: 1px solid #e8e8e8;
+}
+tbody.attc-tbody{
+    width: calc(100% + 2px);
+}
+.theme .edit_btn{
+    line-height: 45px;
+    width: 120px;
+    text-align: center;
+}
+.normal .attc-tbody{
+    border-top: 1px solid #ededed;
+}
+.theme .dataTables_wrapper .dataTables_paginate .paginate_button.previous,
+.theme .dataTables_wrapper .dataTables_paginate .paginate_button.next{
+    border: 1px solid #ededed;
+}
+.theme .dataTables_wrapper .dataTables_paginate .paginate_button.previous:hover,
+.theme .dataTables_wrapper .dataTables_paginate .paginate_button.next:hover{
+    border: 1px solid #ededed;
+    color: #fff!important;
+}
+.theme .table>tbody>tr>td{
+    border-left: 0;
+}
+.theme .table>thead>tr>th+th{
+    border-color: #d7d7d7;
+}
+.theme thead>tr{
+    border-bottom: #e8e8e8;
+}
+.theme .dataTables_wrapper.no-footer .dataTables_scrollBody{
+    border: 0;
+}
+.theme .dataTables_wrapper .dataTables_paginate .paginate_button{
+    line-height: 43px;
+    width: 45px;
+    padding: 0;
+    color: #666!important;
+    background: transparent;
+    border-radius: 50%;
+    border-color: #dae1e6;
+}
+.theme .dataTables_wrapper .dataTables_paginate .paginate_button.previous,
+.theme .dataTables_wrapper .dataTables_paginate .paginate_button.next{
+    width: auto;
+    padding: 0 23px;
+    border-radius: 18px;
+}
+.theme .dataTables_wrapper .dataTables_paginate{
+    margin-top: 35px;
+}
+
+.theme .dataTables_wrapper .dataTables_info {
+    margin-top: 40px;
+    color: #666666;
+}
+
+
+/* Exchanged css */
+.theme .table>tbody>tr>td {
+    border-top: 0;
+    border-right: 0;
+    font-size: 14px;
+    color: #666666;
+    border-bottom: 1px solid #e8e8e8;
+    text-align: left;
+    padding: 14px 20px 8px 20px;
+}
+.theme .attc_front_table .attc-thead tr th {
+    /*border-bottom: 1px solid #ededed;*/
+    border-top: 1px solid #ededed!important;
+}
+.theme .table>thead>tr>th {
+    border-bottom: 0;
+    padding: 15px 20px;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+}
+.theme .table>thead>tr>th+th {
+    border-left: 1px solid #ededed;
+}
+.theme .attc_table_heading {
+    padding-bottom: 29px;
+}
+
+.theme .dataTables_wrapper .dataTables_filter input {
+    width: 190px;
+    display: inline-block;
+}
+.theme .dataTables_filter label input {
+    padding: 0 15px;
+    line-height: 35px;
+    height: 35px;
+    border-radius: 3px;
+    background-color: transparent;
+}
+.theme .dataTables_length select {
+    line-height: 33px;
+    padding: 0 15px;
+    border-radius: 3px;
+    height: 33px;
+    border-width: 1px;
+    background-color: transparent;
+}
+.theme .dataTables_filter {
+    margin-bottom: 30px;
+}
+.theme table.dataTable.no-footer {
+    border-bottom: 1px solid #ededed;
+}
+.theme .dataTables_length select:focus, .default .dataTables_filter label input:focus {
+    outline: 0;
+    border-color: #ababab;
+    box-shadow: 0 0 0;
+}
+.theme .edit_btn {
+    text-decoration: none;
+    border: 0;
+    display: inline-block;
+    color: #fff;
+    padding: 0 20px;
+    font-weight: 600;
+    border-radius: 3px;
+}
+.theme .dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
+    color: #eee!important;
+}
+.theme .dataTables_wrapper .dataTables_paginate .paginate_button.previous.disabled:hover,
+.theme .dataTables_wrapper .dataTables_paginate .paginate_button.next.disabled:hover{
+    background: transparent!important;
+    cursor: not-allowed;
+}
+.theme.normal .attc-tbody{
+    border-bottom: 1px solid #ededed;
+}
+
+.normal.theme.gradient .attc_front_table,
+.normal.theme.gradient_v2 .attc_front_table{
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+.normal.theme.gradient .table>thead>tr>th, .normal.theme.gradient_v2 .table>thead>tr>th{
+    border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+.normal.theme.gradient .attc-tbody,
+.normal.theme.gradient_v2 .attc-tbody{
+    border-bottom: 0;
+}
+.normal.theme.navy_blue .normal_table_wrapper,
+.normal.theme.purple .normal_table_wrapper{
+    padding: 0 30px;
+}
