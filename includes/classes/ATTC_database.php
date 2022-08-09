@@ -74,20 +74,6 @@ if (!class_exists('ATTC_database')):
                 return;
             }
 
-            $jjj = "CREATE TABLE $this->table_name (
-            id mediumint(9) NOT NULL AUTO_INCREMENT,
-            name tinytext NOT NULL,
-            description tinytext NOT NULL,
-            author tinytext NOT NULL,
-            rows mediumint(9) NOT NULL,
-            cols mediumint(9) NOT NULL,
-            color tinytext NOT NULL,
-            responsive tinyint(1) NOT NULL DEFAULT '0',
-            content longtext NOT NULL,
-            date datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
-            PRIMARY KEY  (id)
-            ) $this->db_charset;";
-    
             $table1 = "CREATE TABLE $this->table_name(
                 ID INT(11) unsigned NOT NULL AUTO_INCREMENT,
                 name TINYTEXT COLLATE utf8mb4_unicode_ci NOT NULL,
