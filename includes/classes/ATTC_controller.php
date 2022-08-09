@@ -496,7 +496,7 @@ class ATTC_controller {
                 if ( ! isset( $table_to_import['description'] ) ) {
                     $table_to_import['description'] = $description;
                 }
-                $table_to_import['rows'] = count( $table_to_import['content'] );;
+                $table_to_import['rows_no'] = count( $table_to_import['content'] );;
                 $table_to_import['cols'] = count( $table_to_import['content'][0] );
 
                 break;
@@ -509,7 +509,7 @@ class ATTC_controller {
 
         $num_rows = count( $table_to_import['content'] );
         $num_columns = count( $table_to_import['content'][0] );
-        $existing_table['rows'] = $num_rows;
+        $existing_table['rows_no'] = $num_rows;
         $existing_table['cols'] = $num_columns;
         $existing_table['author'] = !empty($table_to_import['author'])
             ? $table_to_import['author']

@@ -4,7 +4,7 @@ $table = !empty($args['table']) ? $args['table'] : array();
 $name = !empty($table['name']) ? esc_attr(trim($table['name'])) : '';
 $description = !empty($table['description']) ? esc_attr(trim($table['description'])) : '';
 $column = !empty($table['cols']) ? absint($table['cols']) : 0;
-$row = !empty($table['rows']) ? absint($table['rows']) : 0;
+$row = !empty($table['rows_no']) ? absint($table['rows_no']) : 0;
 $create_page = empty($_GET['action']) && 'edit' == empty($_GET['action']) ? true : false;
 
 ?>

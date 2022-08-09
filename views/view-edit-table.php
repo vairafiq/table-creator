@@ -4,7 +4,7 @@ $table = !empty($args['table']) ? $args['table'] : array();
 
 $table_id 		    = $table ? $table['ID'] : '';
 $name 			    = $table ? $table['name'] : '';
-$rows 				= $table ? $table['rows'] : 4;
+$rows 				= $table ? $table['rows_no'] : 4;
 $cols 				= $table ? $table['cols'] : 4;
 $subs 				= !empty($table['subs']) ? $table['subs'] : '';
 $color				= $table ? $table['color'] : 'default';

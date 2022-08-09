@@ -6999,7 +6999,7 @@
 						a.push( ret );
 					}
 				}
-				else if ( type === 'columns' || type === 'rows' ) {
+				else if ( type === 'columns' || type === 'rows_no' ) {
 					// this has same length as context - one entry for each table
 					ret = fn.call( apiInst, context[i], this[i], i );
 	
@@ -7942,7 +7942,7 @@
 	} );
 	
 	_api_register( 'rows().data()', function () {
-		return this.iterator( true, 'rows', function ( settings, rows ) {
+		return this.iterator( true, 'rows_no', function ( settings, rows ) {
 			return _pluck_order( settings.aoData, rows, '_aData' );
 		}, 1 );
 	} );

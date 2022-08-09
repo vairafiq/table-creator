@@ -73,20 +73,34 @@ if (!class_exists('ATTC_database')):
             if(version_compare($current_version, $this->db_version, '=') && $this->db->get_var("SHOW TABLES LIKE '$this->table_name'") == $this->table_name){
                 return;
             }
+
+            $jjj = "CREATE TABLE $this->table_name (
+            id mediumint(9) NOT NULL AUTO_INCREMENT,
+            name tinytext NOT NULL,
+            description tinytext NOT NULL,
+            author tinytext NOT NULL,
+            rows mediumint(9) NOT NULL,
+            cols mediumint(9) NOT NULL,
+            color tinytext NOT NULL,
+            responsive tinyint(1) NOT NULL DEFAULT '0',
+            content longtext NOT NULL,
+            date datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
+            PRIMARY KEY  (id)
+            ) $this->db_charset;";
     
-            $table1 = "CREATE TABLE IF NOT EXISTS $this->table_name(
-                    ID INT(11) unsigned NOT NULL AUTO_INCREMENT,
-                    name TINYTEXT COLLATE utf8mb4_unicode_ci NOT NULL,
-                    description TINYTEXT COLLATE utf8mb4_unicode_ci NOT NULL,
-                    author TINYTEXT COLLATE utf8mb4_unicode_ci NOT NULL,
-                    rows INT(11) COLLATE utf8mb4_unicode_ci NOT NULL,
-                    cols INT(11) COLLATE utf8mb4_unicode_ci NOT NULL,
-                    color TINYTEXT COLLATE utf8mb4_unicode_ci NOT NULL,
-                    responsive tinyint(1) NOT NULL DEFAULT '0',
-                    content LONGTEXT COLLATE utf8mb4_unicode_ci NOT NULL,
-                    date timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-                    PRIMARY KEY  (ID)
-                ) ENGINE=InnoDB $this->db_charset;";
+            $table1 = "CREATE TABLE $this->table_name(
+                ID INT(11) unsigned NOT NULL AUTO_INCREMENT,
+                name TINYTEXT COLLATE utf8mb4_unicode_ci NOT NULL,
+                description TINYTEXT COLLATE utf8mb4_unicode_ci NOT NULL,
+                author TINYTEXT COLLATE utf8mb4_unicode_ci NOT NULL,
+                rows_no INT(11) COLLATE utf8mb4_unicode_ci NOT NULL,
+                cols INT(11) COLLATE utf8mb4_unicode_ci NOT NULL,
+                color TINYTEXT COLLATE utf8mb4_unicode_ci NOT NULL,
+                responsive tinyint(1) NOT NULL DEFAULT '0',
+                content LONGTEXT COLLATE utf8mb4_unicode_ci NOT NULL,
+                date timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+                PRIMARY KEY  (ID)
+            ) ENGINE=InnoDB $this->db_charset;";
 
             $table2 = "CREATE TABLE IF NOT EXISTS $this->meta_table(
                     ID INT(11) unsigned NOT NULL AUTO_INCREMENT,
@@ -127,7 +141,7 @@ if (!class_exists('ATTC_database')):
             $responsive 		= intval(wp_unslash($responsive));
             $content 	        = $this->serialize(wp_unslash($content));
     
-            $result = $this->db->insert( $this->table_name, array('name' => $name, 'description'=>$desc, 'author'=> $author, 'rows' => $rows, 'cols' => $cols, 'color' => $color, 'responsive' => $responsive, 'content' => $content ) );
+            $result = $this->db->insert( $this->table_name, array('name' => $name, 'description'=>$desc, 'author'=> $author, 'rows_no' => $rows, 'cols' => $cols, 'color' => $color, 'responsive' => $responsive, 'content' => $content ) );
             if($result)
                 return $this->db->insert_id;
             return false;
@@ -157,7 +171,7 @@ if (!class_exists('ATTC_database')):
             $responsive 		= intval(wp_unslash($responsive));
             $content 	        = $this->serialize(wp_unslash($content));
     
-            return $this->db->update( $this->table_name, array('name' => $name,'description' => $desc, 'author'=>$author, 'rows' => $rows, 'cols' => $cols, 'color' => $color, 'responsive' => $responsive, 'content' => $content ), array( 'ID' => $ID ) );
+            return $this->db->update( $this->table_name, array('name' => $name,'description' => $desc, 'author'=>$author, 'rows_no' => $rows, 'cols' => $cols, 'color' => $color, 'responsive' => $responsive, 'content' => $content ), array( 'ID' => $ID ) );
         
         }
 
@@ -397,7 +411,7 @@ if (!class_exists('ATTC_database')):
                 'name' => '',
                 'description' => '',
                 'author' => get_userdata(get_current_user_id())->display_name,
-                'rows' => 0,
+                'rows_no' => 0,
                 'cols' => 0,
                 'color' => '',
                 'responsive' => '',

@@ -19,6 +19,8 @@ final class Table_generator_by_aazztech{
         $this->database = new ATTC_database();
         $this->ajax = new ATTC_ajax_handler();
 
+        add_action( 'init', array( $this, 'prepare_plugin' ) );
+
     }
 
 

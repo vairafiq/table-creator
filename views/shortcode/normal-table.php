@@ -9,7 +9,7 @@ $table_id 		    = (!empty($table['ID'])) ? $table['ID'] : '';
 $ID = 'ID_' . rand(1, 100). $table_id;
 $name 			    = (!empty($table['name'])) ? $table['name'] : '';
 $description 		= (!empty($table['description'])) ? $table['description'] : '';
-$rows 				= (!empty($table['rows'])) ? $table['rows'] : 0;
+$rows 				= (!empty($table['rows_no'])) ? $table['rows_no'] : 0;
 $cols 				= (!empty($table['cols'])) ? $table['cols'] : 0;
 $saved_content 	    = (!empty($table['content'])) ? $table['content'] : '';
 
