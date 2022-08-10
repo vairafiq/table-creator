@@ -4,15 +4,13 @@ Donate link: https://exlac.com/
 Tags: table, table generator, data table, html table, responsive data table
 Requires at least: 4.0 
 Tested up to:  6.0
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 TableGen - Data Table Generator plugin allows you to create interactive sortable big data tables as well as a simple table using a very clean and easy-to-use interface. 
 
 == Description ==
-
-Live demo: <https://aazztech.com/demos/plugins/tablegen-data-table-generator>
 
 Do you have a big data that you would like to show on your website? Now you can do that very easily using this awesome plugin. 
 
@@ -64,6 +62,9 @@ So, why do you not give this plugin a try and see yourself how this plugin can m
 9. Example of normal table 
 
 == Changelog ==
+
+= 1.0.6 =
+* Fix - Error in database table creation
 
 = 1.0.5 =
 * Fixed error when saving large amount of table rows
