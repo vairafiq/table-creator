@@ -231,13 +231,13 @@ class ATTC_controller {
             array($this, 'show_import_view')
         );
 
-        add_submenu_page('table-generator-all',
-            __('Get Extensions', ATTC_TEXTDOMAIN),
-            __('<span style="color: #ffc733;">Extensions</span>', ATTC_TEXTDOMAIN),
-            'manage_options',
-            'attc-extension',
-            array($this, 'show_extension_view')
-        );
+        // add_submenu_page('table-generator-all',
+        //     __('Get Extensions', ATTC_TEXTDOMAIN),
+        //     __('<span style="color: #ffc733;">Extensions</span>', ATTC_TEXTDOMAIN),
+        //     'manage_options',
+        //     'attc-extension',
+        //     array($this, 'show_extension_view')
+        // );
 
 
 
