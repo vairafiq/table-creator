@@ -4,7 +4,7 @@ Donate link: https://exlac.com/
 Tags: table, table generator, data table, html table, responsive data table
 Requires at least: 4.0 
 Tested up to:  6.0
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,21 +24,21 @@ Similarly, you can export your table data to a CSV file with this plugin so that
 
 So what makes this plugin the best data table generator plugins? 
 
-Let's look at some outstanding features of this plugin.
+== Let's look at some outstanding features of this plugin ==
 
-*   Extremely Easy to use:  If you can not use a plugin happily, then no matter how great the plugin is, it is just useless. We developed this plugin giving user's usability our first priority. So, you can create very beautiful data table or normal table very easily without having a coding knowledge.
-*   Very Elegant user interface:  We know you do not like ugly user interface when using a plugin that is why we have paid a lot of time creating the interface that will give you peace of mind to use it. We bet you will like the simple and beautiful interface of our plugin. 
-*   Modern and Attractive Table Design:  If the design of the table is not attractive then your data may not be attractive to your users too. 
+👉 Extremely Easy to use:  If you can not use a plugin happily, then no matter how great the plugin is, it is just useless. We developed this plugin giving user's usability our first priority. So, you can create very beautiful data table or normal table very easily without having a coding knowledge.
+👉 Very Elegant user interface:  We know you do not like ugly user interface when using a plugin that is why we have paid a lot of time creating the interface that will give you peace of mind to use it. We bet you will like the simple and beautiful interface of our plugin. 
+👉 Modern and Attractive Table Design:  If the design of the table is not attractive then your data may not be attractive to your users too. 
 This is why we have integrated modern and minimal design to the table. 
-*   Design Compatibility: No matter what your theme is, this plugin will display your data in a very adaptable table that will comply with any theme's design. 
-*   Extensibility: We know every user has different needs. So, we have made this plugin extensible and modular. So, you can use the extension you like and increase the feature of this plugin very easily without touching any codes.
-*   Export your table/data: You can export your table and save them in a safe place or you can take your table data and use them in any other program. So, your data will always be portable and safe. 
-*   Import your table/data: If you have data saved from somewhere like google sheets, MS Excel or you exported them from this plugin then you can easily import them using this plugin and create table instantly with that data. 
-*   Small Size: The size of the plugin is very small. It will not use your valuable hosting space. No junk and useless codes.
-*   Blazing fast and secure: It is very fast and secure. We take no exception to security. We crafted this plugin using latest Object-oriented codes and following latest security and WordPress Coding standard.
-*   Availability of new extensions: We are developing new extensions for this plugins constantly. So, you can extend this plugin very easily.
-*   Fast Updates: We update our plugin with new features very often and fix any bug very fast. So, your site is always fast and safe. 
-*   And many more features.
+👉 Design Compatibility: No matter what your theme is, this plugin will display your data in a very adaptable table that will comply with any theme's design. 
+👉 Extensibility: We know every user has different needs. So, we have made this plugin extensible and modular. So, you can use the extension you like and increase the feature of this plugin very easily without touching any codes.
+👉 Export your table/data: You can export your table and save them in a safe place or you can take your table data and use them in any other program. So, your data will always be portable and safe. 
+👉 Import your table/data: If you have data saved from somewhere like google sheets, MS Excel or you exported them from this plugin then you can easily import them using this plugin and create table instantly with that data. 
+🔥 Small Size: The size of the plugin is very small. It will not use your valuable hosting space. No junk and useless codes.
+🔥 Blazing fast and secure: It is very fast and secure. We take no exception to security. We crafted this plugin using latest Object-oriented codes and following latest security and WordPress Coding standard.
+👉 Availability of new extensions: We are developing new extensions for this plugins constantly. So, you can extend this plugin very easily.
+👉 Fast Updates: We update our plugin with new features very often and fix any bug very fast. So, your site is always fast and safe. 
+🎉 And many more features.
 
 So, why do you not give this plugin a try and see yourself how this plugin can make your life easier when you are in need of creating a powerful data table or just a general table.
 
@@ -62,6 +62,9 @@ So, why do you not give this plugin a try and see yourself how this plugin can m
 9. Example of normal table 
 
 == Changelog ==
+
+= 1.0.6 =
+* Add - Extension submenu
 
 = 1.0.6 =
 * Fix - Error in database table creation
