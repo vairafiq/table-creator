@@ -1,13 +1,13 @@
 <?php
 /**
-Plugin Name: TableGen - Data Table Generator 
-Plugin URI: https://exlac.com/
-Description: A very powerful but easy-to-use plugin to create unlimited general tables or big data table in WordPress. You can also create big data table by importing a csv files or adding data manually. You will love to use this plugin for its elegant interface.
-Version: 1.0.6
-Author: Exlac
-Author URI: https://exlac.com
-License: GPLv2 or later
-Text Domain: table-generator-by-aazztech
+* Plugin Name: TableGen - Data Table Generator 
+* Plugin URI: https://exlac.com/
+* Description: A very powerful but easy-to-use plugin to create unlimited general tables or big data table in WordPress. You can also create big data table by importing a csv files or adding data manually. You will love to use this plugin for its elegant interface.
+* Version: 1.0.7
+* Author: Exlac
+* Author URI: https://exlac.com
+* License: GPLv2 or later
+* Text Domain: table-generator-by-aazztech
 */
 
 
