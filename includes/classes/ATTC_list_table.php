@@ -172,7 +172,7 @@ class ATTC_list_table extends WP_List_Table {
                 echo "<div class='row-actions'><span class='edit'>";
                 echo sprintf('<a href="?page=%s&action=%s&table=%s">%s</a>','create-table-page','edit',$item['ID'], esc_html__('Edit', ATTC_TEXTDOMAIN));
                 echo "</span> | <span class='trash'>";
-                echo sprintf('<a class="confirmation" href="?page=%s&action=%s&table=%s&_wpnonce=%s">%s</a>',$_REQUEST['page'],'delete_attc_table',$item['ID'], wp_create_nonce('delete_attc_table'), esc_html__('Delete', ATTC_TEXTDOMAIN));
+                echo sprintf('<a class="confirmation" data-table_id="%s" href="#">%s</a>', $item['ID'], esc_html__('Delete', ATTC_TEXTDOMAIN));
                 echo "</span></div></td>";
             }
             else {

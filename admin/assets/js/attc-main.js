@@ -503,31 +503,37 @@
                 showLoaderOnConfirm: true
             },
             function(){
-                // $this.context.search.replace('?', ' '); // get the query string from the link and then remove this '?' eg.  page=table-generator-all&action=delete&table=12
 
-                attc.helper.ajax_handler('', $this.context.search.replace('?', ' '), function (data) {
+                let form_data = new FormData();
+                form_data.append( 'action', 'delete_attc_table' );
+                form_data.append( 'tablegen_nonce', attc_obj.tablegen_nonce );
+                form_data.append( 'table_id', $this.data('table_id') );
 
-                if (data === 'success') {
-                    $this.closest('tr').fadeOut();
+                $.ajax({
+                    method: 'POST',
+                    processData: false,
+                    contentType: false,
+                    url: attc_obj.ajax_url,
+                    data: form_data,
+                    success: function (response) {
+                        if( response.error ) {
+                            swal({
+                                title: response.msg,
+                                type:"error",
+                                timer: 1000,
+                                showConfirmButton: false 
+                            });
+                        }
 
-                    swal({
-                        title: "Deleted!!",
-                        type:"success",
-                        timer: 400,
-                        showConfirmButton: false })
-                } else {
-                    swal({
-                        title: "Error Deleting table!!",
-                        type:"error",
-                        timer: 1000,
-                        showConfirmButton: false })
-
-                }
-            });
-
-
-
-
+                        $this.closest('tr').fadeOut();
+                        swal({
+                            title: response.msg,
+                            type:"success",
+                            timer: 400,
+                            showConfirmButton: false 
+                        });
+                    }
+                });
 
             });
     });

@@ -40,20 +40,47 @@ class ATTC_ajax_handler {
 
     public function delete_attc_table()
     {
-        $ID = !empty($_POST['table']) ? absint($_POST['table']) : 0;
 
-        if (!empty($ID) && $this->_is_valid_nonce('_wpnonce', 'delete_attc_table') ) {
-            // we have passed the security, now we can delete the table row safely.
-            $success = $this->db->delete($ID); // delete table
-            if (!empty($success)){
-                $this->db->delete_table_meta($ID); // delete meta table if available
-                echo 'success';
-            }
-
-        }else{
-            echo 'error';
+        if( ! tablegen_verify_nonce() ) {
+            wp_send_json([
+                'error' => true,
+                'msg' => __( 'Invalid nonce!', 'tablegen-google-sheet-integration' ),
+            ]);
         }
-        wp_die();
+
+        if( ! current_user_can( 'manage_options' ) ) {
+            wp_send_json([
+                'error' => true,
+                'msg' => __( 'You are not allowed to import', 'tablegen-google-sheet-integration' ),
+            ]);
+        }
+
+        $ID = !empty($_POST['table_id']) ? absint($_POST['table_id']) : 0;
+
+        if( empty( $ID ) ) {
+            wp_send_json([
+                'error' => true,
+                'msg' => __( 'Table is missing', 'tablegen-google-sheet-integration' ),
+            ]);
+        }
+
+        // we have passed the security, now we can delete the table row safely.
+        $result = $this->db->delete($ID); // delete table
+        
+        if( is_wp_error( $result ) ) {
+            wp_send_json([
+                'error' => true,
+                'msg' => __( 'Error deleting table', 'tablegen-google-sheet-integration' ),
+            ]);
+        }
+        
+        $this->db->delete_table_meta($ID); // delete meta table if available
+
+        wp_send_json([
+            'msg' => __( 'Table deleted successfully', 'tablegen-google-sheet-integration' ),
+
+        ]);
+
     }
 
     public function update_table() {
