@@ -75,9 +75,6 @@ So, why do you not give this plugin a try and see yourself how this plugin can m
 = 1.0.6 =
 
 * Add - Extension submenu
-
-= 1.0.6 =
-
 * Fix - Error in database table creation
 
 = 1.0.5 =
