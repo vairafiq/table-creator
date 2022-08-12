@@ -27,7 +27,6 @@ class ATTC_enqueue {
             wp_enqueue_script( 'attc-bootstrap-js', ATTC_ADMIN_ASSETS . 'js/attc-bootstrap.min.js', array( 'jquery' ), ATTC_VERSION, true );
             wp_enqueue_script( 'attc-sweetalert-js', ATTC_ADMIN_ASSETS . 'js/sweetalert.min.js', array( 'jquery' ), ATTC_VERSION, true );
 
-
             wp_enqueue_script( 'attc-main-js', ATTC_ADMIN_ASSETS . 'js/attc-main.js', array(
                 'jquery',
                 'jquery-ui-resizable',
@@ -37,12 +36,11 @@ class ATTC_enqueue {
             $attc_obj = array(
                 'nonceAction' => $ATTC->helper->nonceAction(),
                 'nonce'       => wp_create_nonce( $ATTC->helper->nonceName() ),
+                'tablegen_nonce' => wp_create_nonce( tablegen_get_nonce_key() ),
                 'adminAsset'  => ATTC_ADMIN_ASSETS,
+                'ajax_url'  => admin_url( 'admin-ajax.php' ),
             );
             wp_localize_script( 'attc-main-js', 'attc_obj', $attc_obj );
-
-
-
         }
 
     }

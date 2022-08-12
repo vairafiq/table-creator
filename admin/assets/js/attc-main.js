@@ -505,7 +505,7 @@
             function(){
                 // $this.context.search.replace('?', ' '); // get the query string from the link and then remove this '?' eg.  page=table-generator-all&action=delete&table=12
 
-            attc.helper.ajax_handler('', $this.context.search.replace('?', ' '), function (data) {
+                attc.helper.ajax_handler('', $this.context.search.replace('?', ' '), function (data) {
 
                 if (data === 'success') {
                     $this.closest('tr').fadeOut();

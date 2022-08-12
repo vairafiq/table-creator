@@ -474,7 +474,7 @@ class ATTC_controller {
      * @param string      $import_type       What to do with the imported data: "add", "replace", "append".
      * @return string|WP_Error WP_Error on error, table ID on success.
      */
-    protected function _import_insert_or_replace_table( $format, $data, $name, $description, $existing_table_id, $import_type ) {
+    public function _import_insert_or_replace_table( $format, $data, $name, $description, $existing_table_id, $import_type ) {
         $table_to_import = $this->importer->import_table( $format, $data ); // it will give an array of data eg. array('content' => array());
 
         if ( false === $table_to_import ) {

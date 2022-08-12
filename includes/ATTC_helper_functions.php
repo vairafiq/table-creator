@@ -1,6 +1,38 @@
 <?php
 // Prohibit direct script loading.
 defined( 'ABSPATH' ) || die( 'No direct script access allowed!' );
+
+
+/*
+* Generate an unique nonce key using version constant.
+*
+* @since 7.0.6.2
+*
+* @return string nonce key with current version
+*/
+function tablegen_get_nonce_key() {
+   return 'tablegen_nonce_' . ATTC_VERSION;
+}
+
+/**
+* Check if the given nonce field contains a verified nonce.
+*
+* @since 7.0.6.2
+* @since 7.3.1 $action param added
+*
+* @see tablegen_get_nonce_key()
+*
+* @param string $nonce_field $_GET or $_POST field name.
+* @param string $action Nonce action key. Default to tablegen_get_nonce_key()
+*
+* @return boolen
+*/
+function tablegen_verify_nonce( $nonce_field = 'tablegen_nonce', $action = '' ) {
+   $nonce = ! empty( $_REQUEST[ $nonce_field ] ) ? sanitize_text_field( wp_unslash( $_REQUEST[ $nonce_field ] ) ) : '';
+   return wp_verify_nonce( $nonce, ( $action ? $action : tablegen_get_nonce_key() ) );
+}
+
+
 /**
  * It loads files from a given directory using require_once.
  * @param string|array $files list of the names of file or a single file name to be loaded. Default: all
