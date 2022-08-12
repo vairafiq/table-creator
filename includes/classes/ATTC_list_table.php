@@ -75,7 +75,7 @@ class ATTC_list_table extends WP_List_Table {
 
     function get_bulk_actions() {
         $actions = array(
-            'delete'    => __('Delete', ATTC_TEXTDOMAIN)
+            //'delete'    => __('Delete', ATTC_TEXTDOMAIN)
         );
         return $actions;
     }
