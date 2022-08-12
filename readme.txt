@@ -4,7 +4,7 @@ Donate link: https://exlac.com/
 Tags: table, table generator, data table, html table, responsive data table
 Requires at least: 4.0 
 Tested up to:  6.0
-Stable tag: 1.0.7
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -40,6 +40,10 @@ This is why we have integrated modern and minimal design to the table.
 👉 Fast Updates: We update our plugin with new features very often and fix any bug very fast. So, your site is always fast and safe. 
 🎉 And many more features.
 
+🔥 **[Theme Pack](https://exlac.com/product/tablegen-themes/)*:** Beautify your data table with professional themes. This pack comes with 8 different and buitiful view and many more customizations.
+🔥 **[Google Sheet Integration](https://exlac.com/product/tablegen-google-sheet-integration/)*:** Import big data directly form Google Sheet within a minute and no more complexity.
+>*Requires Additional Purchase
+
 So, why do you not give this plugin a try and see yourself how this plugin can make your life easier when you are in need of creating a powerful data table or just a general table.
 
 == Installation ==
@@ -47,7 +51,6 @@ So, why do you not give this plugin a try and see yourself how this plugin can m
 1. Unzip the downloaded zip file and upload the plugin folder into the `wp-content/plugins/` directory. Alternatively, upload from Plugins >> Add New >> Upload Plugin.
 2. Activate the plugin from Plugins page.
 3. Go to Settings menu under 'Table Generator' and create a table and use the shortcode generated eg. [attc id=1] on the top right side of the table editing page on any page or post where you would like to display the table. 
-
 
 == Screenshots ==
 
@@ -63,25 +66,44 @@ So, why do you not give this plugin a try and see yourself how this plugin can m
 
 == Changelog ==
 
+= 1.2.0 =
+
+* Fix - Table deleting issue
+* Add - Compatibility for Google Sheet Integration
+* Improve - Security
+
 = 1.0.6 =
+
 * Add - Extension submenu
 
 = 1.0.6 =
+
 * Fix - Error in database table creation
 
 = 1.0.5 =
+
 * Fixed error when saving large amount of table rows
 * Improved security when deleting data table
 * Improved performance
 * Improved AJAX handling
 * Made more texts translatable
+
 = 1.0.4 =
+
 * Normalize pagination color
+
 = 1.0.3 =
+
 * Improved code, prevented negative number in table column and row fields.
+
 = 1.0.2 =
+
 * Added compatibility for new theme extension
+
 = 1.0.1 =
+
 * Cleaned interface
+
 = 1.0.0 =
+
 * Initial release
