@@ -32,7 +32,7 @@ class ATTC_list_table extends WP_List_Table {
         // add fields name that will be displayed on the screen, if the data column is available in the database
         // then those data will be displayed automatically, else add custom data for custom column  in $this->column_default
         $columns = array(
-            'cb'	=> '<input type="checkbox" />',
+            // 'cb'	=> '<input type="checkbox" />',
             'ID'	=> __('ID', ATTC_TEXTDOMAIN),
             'name'	=> __('Name', ATTC_TEXTDOMAIN),
             'description'	=> __('Description', ATTC_TEXTDOMAIN),
@@ -71,13 +71,6 @@ class ATTC_list_table extends WP_List_Table {
             /*$1%s*/ $this->_args['singular'],
             /*$2%s*/ $item['ID']
         );
-    }
-
-    function get_bulk_actions() {
-        $actions = array(
-            //'delete'    => __('Delete', ATTC_TEXTDOMAIN)
-        );
-        return $actions;
     }
 
     function prepare_items() {

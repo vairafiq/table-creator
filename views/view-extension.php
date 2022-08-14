@@ -17,10 +17,10 @@
         <div class="single_extension">
             <div class="extension_detail">
                 <a href="#" class="ext_title"><h4>Google Sheet Integration</h4></a>
-                <p>Two way sync with Google Sheet and TableGet. You can store edit and store data from Google sheet and also from wordpress you can update your Google sheet.(comming soon)</p>
+                <p>Import data directly from Google Sheet and show in your WordPress pages. No need to configure any settings, just copy the sheet id and start importing!</p>
 
                 <div class="btn_wrapper">
-                    <a href="https://exlac.com/contact-us/" target="_blank" class="btn get">Request for priority</a>
+                    <a href="https://exlac.com/product/tablegen-google-sheet-integration/" target="_blank" class="btn get">Get extension</a>
                 </div>
             </div>
         </div>
