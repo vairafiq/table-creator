@@ -19,8 +19,63 @@ class ATTC_ajax_handler {
         add_action('wp_ajax_delete_attc_table', array($this, 'delete_attc_table'));
         add_action('wp_ajax_update_tablegen_data', array($this, 'update_table'));
 
+        add_action('wp_ajax_tablegen_imort_from_google', array($this, 'import_from_google'));
 
     }
+
+    public function import_from_google() {
+       
+        if( ! tablegen_verify_nonce() ) {
+            wp_send_json([
+                'error' => true,
+                'msg' => __( 'Invalid nonce!', 'tablegen-google-sheet-integration' ),
+            ]);
+        }
+
+        if( ! current_user_can( 'manage_options' ) ) {
+            wp_send_json([
+                'error' => true,
+                'msg' => __( 'You are not allowed to import', 'tablegen-google-sheet-integration' ),
+            ]);
+        }
+        
+
+        $sheet_key          = ! empty( $_POST['sheet_key'] ) ? sanitize_text_field( wp_unslash( $_POST['sheet_key'] ) ) : '';
+        $sheet_id           = ! empty( $_POST['sheet_id'] ) ? sanitize_text_field( wp_unslash( $_POST['sheet_id'] ) ) : '';
+        $name               = ! empty( $_POST['table_name'] ) ? sanitize_text_field( wp_unslash( $_POST['table_name'] ) ) : '';
+        $description        = ! empty( $_POST['table_description'] ) ? sanitize_text_field( wp_unslash( $_POST['table_description'] ) ) : '';
+        
+        if( empty( $sheet_key ) || empty( $name ) ) {
+            wp_send_json([
+                'error' => true,
+                'msg' => __( 'Please fill up the required field', 'tablegen-google-sheet-integration' ),
+            ]);
+        }
+
+        $url = "https://docs.google.com/spreadsheets/d/$sheet_key/export?format=csv";
+        if( ! empty( $sheet_id ) ) {
+            $url = "https://docs.google.com/spreadsheets/d/$sheet_key/export?gid=$sheet_id&format=csv";
+        }
+
+        $data = file_get_contents( $url );
+        $controller = new ATTC_controller();
+
+        $import = $controller->_import_insert_or_replace_table( 'csv', $data, $name, $description, '', 'add');
+
+
+        if( is_wp_error( $import ) ) {
+            wp_send_json([
+                'error' => true,
+                'msg' => __( 'Error importing data', 'tablegen-google-sheet-integration' ),
+            ]);
+        }
+
+        wp_send_json([
+            'msg' => __( 'Successfully imported to a new table', 'tablegen-google-sheet-integration' ),
+        ]);
+
+    }
+ 
 
     public function attc_setting_handler()
     {

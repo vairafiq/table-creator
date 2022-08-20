@@ -65,7 +65,64 @@ class ATTC_import {
         $this->import_formats = array();
         $this->import_formats['csv'] = __( 'CSV - Character-Separated Values', ATTC_TEXTDOMAIN );
 
+        add_action('attc_import_tab_menu', array($this, 'show_tab_menu'));
+        add_action('attc_import_tab_content', array($this, 'attc_tab_content'), 10);
+
     }
+
+
+        /**
+        * It hooks into the Table Generator plugin's edit page and output theme section in the tab.
+        * @param array $table It contains all the data of the table where we are hooking into
+        */
+        public function attc_tab_content( $table )
+        {
+            ?>
+                <div class="tab-pane fade" id="table_setting">
+                    <div class="container-fluid attc_import_view">
+                        <div class="row">
+                            <div class="col-md-5 col-md-offset-3">
+                                <form action="" method="post" id="tablegen_imort_from_google">
+                                    <div class="upload_content">
+                                        <div class="upload_wrapper">
+                                            <label for="sheet_key"><?php esc_html_e( 'Sheet Key', 'tablegen-google-sheet-integration' ); ?>*</label>
+                                            <input type="text" required name="sheet_key" class="attc_input_field" placeholder="<?php esc_html_e( 'Enter your google sheet key', 'tablegen-google-sheet-integration' ); ?>" />
+
+                                            <label for="sheet_id"><?php esc_html_e( 'Sheet ID', 'tablegen-google-sheet-integration' ); ?></label>
+                                            <input type="text" name="sheet_id" class="attc_input_field" placeholder="<?php esc_html_e( 'Enter your google sheet id if you have more than one, Defaule: first sheet', 'tablegen-google-sheet-integration' ); ?>" />
+                                            
+                                            <label for="table_name"><?php esc_html_e( 'Table Name', 'tablegen-google-sheet-integration' ); ?>*</label>
+                                            <input type="text" required name="table_name" class="attc_input_field" placeholder="<?php esc_html_e( 'Enter your table name', 'tablegen-google-sheet-integration' ); ?>" />
+                                            
+                                            <label for="table_description"><?php esc_html_e( 'Table Description', 'tablegen-google-sheet-integration' ); ?></label>
+                                            <input type="text" name="table_description" class="attc_input_field" placeholder="<?php esc_html_e( 'Enter your description', 'tablegen-google-sheet-integration' ); ?>" />
+                                        </div>
+                                        <button class="attc_btn attc_google_import_btn" type="submit" name="button"><?php esc_html_e( 'Import Sheet', 'tablegen-google-sheet-integration' ); ?></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php
+        }
+
+         /**
+         * It output a tab menu item in the tab of Table Generator plugin's edit screen by hooking there
+         */
+        public function show_tab_menu()
+        {
+            ?>
+                <li>
+                    <a href="#table_setting" data-toggle="tab">
+                        <p class="round-tabs two">
+                            <i class="glyphicon glyphicon-cloud"></i>
+                            <span><?php esc_html_e('Google Sheet', 'tablegen-google-sheet-integration'); ?></span>
+                        </p>
+                    </a>
+                </li>
+            <?php
+        }
 
     /**
      * Import a table.

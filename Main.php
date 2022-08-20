@@ -120,7 +120,7 @@ final class Table_generator_by_aazztech{
         if ( is_admin() ) {
             add_filter( 'plugin_action_links_' . ATTC_BASE, array($this, 'add_plugin_action_link') );
             //@TODO; we will add plugin row meta links when website is ready and docs is available too.
-            //add_filter( 'plugin_row_meta', array( $this, 'add_plugin_row_meta_link' ), 10, 2 );
+            add_filter( 'plugin_row_meta', array( $this, 'add_plugin_row_meta_link' ), 10, 2 );
         }
 
         // Enables shortcode for Widget
@@ -160,7 +160,7 @@ final class Table_generator_by_aazztech{
      */
     public function add_plugin_action_link(array $links) {
         unset($links['edit']); // protect editing the plugin by removing the editing link.
-        $links[] = sprintf( '<a href="%s" title="%s">%s</a>', 'admin.php?page=table-generator-new', 'Add New', __( 'Add New', ATTC_TEXTDOMAIN ) );
+        $links[] = sprintf( '<a href="%s" title="%s">%s</a>', 'admin.php?page=create-table-page', 'Add New', __( 'Add New', ATTC_TEXTDOMAIN ) );
         $links[] = sprintf( '<a href="%s" title="%s">%s</a>', 'admin.php?page=table-generator-all', 'View All', __( 'View All', ATTC_TEXTDOMAIN ) );
         return $links;
 
@@ -170,10 +170,9 @@ final class Table_generator_by_aazztech{
     public function add_plugin_row_meta_link(array $links, $file)
     {
         if ( ATTC_BASE === $file ) {
-            $links[] = '<a href="https://aazztech.com/faq/" title="' . esc_attr__( 'Frequently Asked Questions', ATTC_TEXTDOMAIN ) . '">' . __( 'FAQ', ATTC_TEXTDOMAIN ) . '</a>';
-            $links[] = '<a href="https://aazztech.com/documentation/">' . __( 'Documentation', ATTC_TEXTDOMAIN ) . '</a>';
-            $links[] = '<a href="https://aazztech.com/support/">' . __( 'Get Support', ATTC_TEXTDOMAIN ) . '</a>';
-            $links[] = '<a href="https://aazztech.com/donate/" title="' . esc_attr__( 'Support Table Generator with your donation!', ATTC_TEXTDOMAIN ) . '"><strong>' . __( 'Donate', ATTC_TEXTDOMAIN ) . '</strong></a>';
+            $links[] = '<a href="https://exlac.com/documentation/">' . __( 'Documentation', ATTC_TEXTDOMAIN ) . '</a>';
+            $links[] = '<a href="https://exlac.com/contact-us/">' . __( 'Get Support', ATTC_TEXTDOMAIN ) . '</a>';
+            $links[] = '<a href="https://exlac.com/" title="' . esc_attr__( 'Support Table Generator with your donation!', ATTC_TEXTDOMAIN ) . '"><strong>' . __( 'Donate', ATTC_TEXTDOMAIN ) . '</strong></a>';
         }
         return $links;
     }

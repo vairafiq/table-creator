@@ -41,6 +41,16 @@ class ATTC_enqueue {
                 'ajax_url'  => admin_url( 'admin-ajax.php' ),
             );
             wp_localize_script( 'attc-main-js', 'attc_obj', $attc_obj );
+
+            wp_register_script( 'attc-import-js', ATTC_ADMIN_ASSETS . 'js/attc-import.js', array(
+                'jquery',
+                'attc-bootstrap-js',
+            ), ATTC_VERSION, true );
+
+            if( 'attc-import' === $page ) {
+                wp_enqueue_script( 'attc-import-js' );
+                wp_localize_script( 'attc-import-js', 'attc_import_data', $attc_obj );
+            }
         }
 
     }

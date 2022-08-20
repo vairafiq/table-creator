@@ -25,18 +25,7 @@ $tables = (!empty($args['tables']) && is_array($args['tables'])) ? $args['tables
 
                     </li>
 
-                    <?php if( ! class_exists( 'TableGent_GSI' ) ) { ?>
-                    <li>
-                        <a href="#table_setting" data-toggle="tab">
-                            <p class="round-tabs two">
-                                <i class="glyphicon glyphicon-cloud"></i>
-                                <span><?php esc_html_e('Google Sheet', ATTC_TEXTDOMAIN); ?></span>
-                            </p>
-                        </a>
-                    </li>
-
                     <?php
-                    }
                     // hook to add tab item
                     do_action('attc_import_tab_menu');
                     ?>
@@ -50,13 +39,7 @@ $tables = (!empty($args['tables']) && is_array($args['tables'])) ? $args['tables
                     <?php $ATTC->loadView('import/csv', array('table' => $table)); ?>
                 </div>  <!--ends .tab-pane   #home-->
 
-                <?php if( ! class_exists( 'TableGent_GSI' ) ) { ?>
-                <div class="tab-pane fade" id="table_setting">
-                    <?php $ATTC->loadView('import/google-sheet', array('table' => $table)); ?>
-                </div>  <!--ends .tab-pane   #table_setting-->
-
-                <?php
-                }
+                <?php 
                 // hook to add tab item/content
                 do_action('attc_import_tab_content', $table);
                 ?>

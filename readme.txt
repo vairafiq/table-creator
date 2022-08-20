@@ -4,7 +4,7 @@ Donate link: https://exlac.com/
 Tags: table, table generator, data table, html table, responsive data table
 Requires at least: 4.0 
 Tested up to:  6.0
-Stable tag: 1.2.1
+Stable tag: 1.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,9 +12,9 @@ TableGen - Data Table Generator plugin allows you to create interactive sortable
 
 == Description ==
 
-👉 **[Plugin Demo](https://exlac.com/demos/tablegen/) | [Documentation](https://exlac.com/docs/tablegen/)** 👈
+👉 **[Plugin Demo](https://exlac.com/demos/tablegen/) | [Documentation](https://exlac.com/documentation/) | [Roadmap](https://exlac.com/roadmap/)** 👈
 
-Do you have a big data that you would like to show on your website? Now you can do that very easily using this awesome plugin. 
+Do you have a big data that you would like to show on your website? Now you can do that very easily using this awesome plugin. Also import your Google Sheet in a minute! 
 
 You can create unlimited interactive, sortable, paginated and searchable data tables with your data and show them on your website using a small shortcode with the help of this handy plugin.
 
@@ -27,6 +27,8 @@ Similarly, you can export your table data to a CSV file with this plugin so that
 So what makes this plugin the best data table generator plugins? 
 
 == Let's look at some outstanding features of this plugin ==
+
+🎉🎉**New: Import Unlimited Google Sheet**🎉🎉
 
 👉 Extremely Easy to use:  If you can not use a plugin happily, then no matter how great the plugin is, it is just useless. We developed this plugin giving user's usability our first priority. So, you can create very beautiful data table or normal table very easily without having a coding knowledge.
 👉 Very Elegant user interface:  We know you do not like ugly user interface when using a plugin that is why we have paid a lot of time creating the interface that will give you peace of mind to use it. We bet you will like the simple and beautiful interface of our plugin. 
@@ -43,8 +45,6 @@ This is why we have integrated modern and minimal design to the table.
 🎉 And many more features.
 
 🔥 **[Theme Pack](https://exlac.com/product/tablegen-themes/)*:** Beautify your data table with professional themes. This pack comes with 8 different and buitiful view and many more customizations.
-🔥 **[Google Sheet Integration](https://exlac.com/product/tablegen-google-sheet-integration/)*:** Import big data directly form Google Sheet within a minute and no more complexity.
->*Requires Additional Purchase
 
 So, why do you not give this plugin a try and see yourself how this plugin can make your life easier when you are in need of creating a powerful data table or just a general table.
 
@@ -56,17 +56,23 @@ So, why do you not give this plugin a try and see yourself how this plugin can m
 
 == Screenshots ==
 
-1. "Create Table" screen
-2. "Edit Table" screen 1
-3. "Edit Table" screen 2
+1. "Edit Table" screen 1
+2. "Edit Table" screen 2
+3. "Create Table" screen
 4. "Table Settings" screen
 5. "All Tables" screen
 6. "Export" screen
-7. "Import" screen
-8. Example of data table 
-9. Example of normal table 
+7. "CSV Import" screen
+8. "Google Sheet Import" screen
+9. Example of data table 
+10. Example of normal table 
 
 == Changelog ==
+
+= 1.3.0 =
+
+* Add - Google Sheet Integration for free
+* Fix - Plugin action redirection
 
 = 1.2.0 =
 
