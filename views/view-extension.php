@@ -16,17 +16,6 @@
 
         <div class="single_extension">
             <div class="extension_detail">
-                <a href="#" class="ext_title"><h4>Google Sheet Integration</h4></a>
-                <p>Import data directly from Google Sheet and show in your WordPress pages. No need to configure any settings, just copy the sheet id and start importing!</p>
-
-                <div class="btn_wrapper">
-                    <a href="https://exlac.com/product/tablegen-google-sheet-integration/" target="_blank" class="btn get">Get extension</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="single_extension">
-            <div class="extension_detail">
                 <a href="#" class="ext_title"><h4>Shop Integration</h4></a>
                 <p>Connect your WooCommerce shop to showcase your product with advanced filtering option. More effective product page means more conversion in sale.(Comming soon)</p>
 
