@@ -15,10 +15,10 @@ if ( !defined('ATTC_LIB_DIR') ) { define('ATTC_LIB_DIR', ATTC_DIR.'libs/'); }
 if ( !defined('ATTC_TEMPLATES_DIR') ) { define('ATTC_TEMPLATES_DIR', ATTC_DIR.'templates/'); }
 if ( !defined('ATTC_ADMIN_ASSETS') ) { define('ATTC_ADMIN_ASSETS', ATTC_URL.'admin/assets/'); }
 if ( !defined('ATTC_PUBLIC_ASSETS') ) { define('ATTC_PUBLIC_ASSETS', ATTC_URL.'public/assets/'); }
-if ( !defined('ATTC_TEXTDOMAIN') ) { define('ATTC_TEXTDOMAIN', 'table-generator-by-aazztech'); }
+if ( !defined('ATTC_TEXTDOMAIN') ) { define('ATTC_TEXTDOMAIN', 'tablegen'); }
 if ( !defined('ATTC_LANG_DIR') ) { define('ATTC_LANG_DIR', dirname(plugin_basename( __FILE__ ) ) . '/languages'); }
 if ( !defined('ATTC_PLUGIN_NAME') ) { define('ATTC_PLUGIN_NAME', 'Table Generator by AazzTech'); }
 if ( !defined('ATTC_TBL_NAME') ) { define('ATTC_TBL_NAME', $wpdb->prefix.'attc_table'); }
 if ( !defined('ATTC_TC_LINE__') ) { define('ATTC_TC_LINE__', __FILE__); }
-if ( !defined('ATTC_ALERT_MSG') ) { define('ATTC_ALERT_MSG', __('You do not have the right to access this file directly', ATTC_TEXTDOMAIN)); }
+if ( !defined('ATTC_ALERT_MSG') ) { define('ATTC_ALERT_MSG', __('You do not have the right to access this file directly', 'tablegen')); }
 

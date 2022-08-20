@@ -160,8 +160,8 @@ final class Table_generator_by_aazztech{
      */
     public function add_plugin_action_link(array $links) {
         unset($links['edit']); // protect editing the plugin by removing the editing link.
-        $links[] = sprintf( '<a href="%s" title="%s">%s</a>', 'admin.php?page=create-table-page', 'Add New', __( 'Add New', ATTC_TEXTDOMAIN ) );
-        $links[] = sprintf( '<a href="%s" title="%s">%s</a>', 'admin.php?page=table-generator-all', 'View All', __( 'View All', ATTC_TEXTDOMAIN ) );
+        $links[] = sprintf( '<a href="%s" title="%s">%s</a>', 'admin.php?page=create-table-page', 'Add New', __( 'Add New', 'tablegen' ) );
+        $links[] = sprintf( '<a href="%s" title="%s">%s</a>', 'admin.php?page=table-generator-all', 'View All', __( 'View All', 'tablegen' ) );
         return $links;
 
     }
@@ -170,9 +170,9 @@ final class Table_generator_by_aazztech{
     public function add_plugin_row_meta_link(array $links, $file)
     {
         if ( ATTC_BASE === $file ) {
-            $links[] = '<a href="https://exlac.com/documentation/">' . __( 'Documentation', ATTC_TEXTDOMAIN ) . '</a>';
-            $links[] = '<a href="https://exlac.com/contact-us/">' . __( 'Get Support', ATTC_TEXTDOMAIN ) . '</a>';
-            $links[] = '<a href="https://exlac.com/" title="' . esc_attr__( 'Support Table Generator with your donation!', ATTC_TEXTDOMAIN ) . '"><strong>' . __( 'Donate', ATTC_TEXTDOMAIN ) . '</strong></a>';
+            $links[] = '<a href="https://exlac.com/documentation/">' . __( 'Documentation', 'tablegen' ) . '</a>';
+            $links[] = '<a href="https://exlac.com/contact-us/">' . __( 'Get Support', 'tablegen' ) . '</a>';
+            $links[] = '<a href="https://exlac.com/" title="' . esc_attr__( 'Support Table Generator with your donation!', 'tablegen' ) . '"><strong>' . __( 'Donate', 'tablegen' ) . '</strong></a>';
         }
         return $links;
     }
@@ -183,7 +183,7 @@ final class Table_generator_by_aazztech{
      * @return void
      */
     public function load_textdomain(){
-        load_plugin_textdomain(ATTC_TEXTDOMAIN, false, plugin_basename( dirname( __FILE__ ) ) . '/languages/');
+        load_plugin_textdomain('tablegen', false, plugin_basename( dirname( __FILE__ ) ) . '/languages/');
     }
 
 
@@ -198,14 +198,14 @@ final class Table_generator_by_aazztech{
             <div class="error notice is-dismissible"><p>
                     <?php
 
-                    printf( __( ATTC_PLUGIN_NAME. 'requires WordPress version %1$s or newer. It appears that you are running %2$s. The plugin may not work properly.', ATTC_TEXTDOMAIN ),
+                    printf( __( ATTC_PLUGIN_NAME. 'requires WordPress version %1$s or newer. It appears that you are running %2$s. The plugin may not work properly.', 'tablegen' ),
                         $this->req_wp_version,
                         esc_html( $wp_ver )
                     );
 
                     echo '<br>';
 
-                    printf( __( 'Please upgrade your WordPress installation or download latest version from <a href="%s" target="_blank" title="Download Latest WordPress">here</a>.', ATTC_TEXTDOMAIN ),
+                    printf( __( 'Please upgrade your WordPress installation or download latest version from <a href="%s" target="_blank" title="Download Latest WordPress">here</a>.', 'tablegen' ),
                         'https://wordpress.org/download/'
                     );
 
@@ -338,7 +338,7 @@ final class Table_generator_by_aazztech{
      */
     public static function get_user_display_name( $user_id ) {
         $user = get_userdata( $user_id );
-        return ( $user && isset( $user->display_name ) ) ? $user->display_name : __( '<em>unknown</em>', ATTC_TEXTDOMAIN );
+        return ( $user && isset( $user->display_name ) ) ? $user->display_name : __( '<em>unknown</em>', 'tablegen' );
     }
 
 

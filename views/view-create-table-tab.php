@@ -16,7 +16,7 @@ $table = !empty($args['table']) ? $args['table'] : array();
                     <li class="active"><a href="#home" data-toggle="tab">
                             <p class="round-tabs one">
                                 <i class=" glyphicon glyphicon-edit"></i>
-                                <span><?php esc_html_e('Edit Table', ATTC_TEXTDOMAIN); ?></span>
+                                <span><?php esc_html_e('Edit Table', 'tablegen'); ?></span>
                             </p>
                         </a>
 
@@ -27,7 +27,7 @@ $table = !empty($args['table']) ? $args['table'] : array();
                         <a href="#table_setting" data-toggle="tab">
                             <p class="round-tabs two">
                                 <i class="glyphicon glyphicon-cog"></i>
-                                <span><?php esc_html_e('Table Settings', ATTC_TEXTDOMAIN); ?></span>
+                                <span><?php esc_html_e('Table Settings', 'tablegen'); ?></span>
                             </p>
                         </a>
                     </li>

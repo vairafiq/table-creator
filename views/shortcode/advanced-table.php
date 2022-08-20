@@ -79,7 +79,7 @@ if (!empty($args['table']['theme']['name'])  &&  false != get_option('attc_exten
                     <?php
                     // show a edit table link if the user is logged in and user can edit_post.
                     if (is_user_logged_in() && user_can(get_current_user_id(), 'manage_options')) {
-                        echo sprintf('<caption style=""><a class="edit_btn" href="%sadmin.php?page=%s&action=%s&table=%s">%s</a></caption>', get_admin_url(),'create-table-page','edit',$table_id, __('Edit Table', ATTC_TEXTDOMAIN) );
+                        echo sprintf('<caption style=""><a class="edit_btn" href="%sadmin.php?page=%s&action=%s&table=%s">%s</a></caption>', get_admin_url(),'create-table-page','edit',$table_id, __('Edit Table', 'tablegen') );
                     }
                     ?>
             <!--         print column header-->

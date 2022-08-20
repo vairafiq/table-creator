@@ -140,8 +140,8 @@ class ATTC_helper {
             'format' => '?paged=%#%',
             'current' => max( 1, $paged ),
             'total' => $loop->max_num_pages,
-            'prev_text' => __($nav_text[0], ATTC_TEXTDOMAIN),
-            'next_text' => __($nav_text[1], ATTC_TEXTDOMAIN),
+            'prev_text' => __($nav_text[0], 'tablegen'),
+            'next_text' => __($nav_text[1], 'tablegen'),
         ) );
 
         $html .= '</div >';

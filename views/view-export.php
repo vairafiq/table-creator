@@ -46,7 +46,7 @@ $tables = (!empty($args['tables']) && is_array($args['tables'])) ? $args['tables
                     </div>
 
                     <button type="submit" class="attc_btn" name="attc_export_submit" <?= (empty($tables)) ? 'disabled' : ''; ?> >
-                        <?= __('Download Table', ATTC_TEXTDOMAIN);?>
+                        <?= __('Download Table', 'tablegen');?>
                         <span class="glyphicon glyphicon-download-alt"></span>
                     </button>
                 </form>

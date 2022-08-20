@@ -38,14 +38,14 @@ if( !class_exists( 'ATTC_export' ) ) :
         public function __construct() {
             // Initiate here, because function call not possible outside a class method.
             $this->export_formats = array(
-                'csv' => __( 'CSV - Character-Separated Values', ATTC_TEXTDOMAIN ),
-                'html' => __( 'HTML - Hypertext Markup Language', ATTC_TEXTDOMAIN ),
-                'json' => __( 'JSON - JavaScript Object Notation', ATTC_TEXTDOMAIN ),
+                'csv' => __( 'CSV - Character-Separated Values', 'tablegen' ),
+                'html' => __( 'HTML - Hypertext Markup Language', 'tablegen' ),
+                'json' => __( 'JSON - JavaScript Object Notation', 'tablegen' ),
             );
             $this->csv_delimiters = array(
-                ';' => __( '; (semicolon)', ATTC_TEXTDOMAIN ),
-                ',' => __( ', (comma)', ATTC_TEXTDOMAIN ),
-                'tab' => __( '\t (tabulator)', ATTC_TEXTDOMAIN ),
+                ';' => __( '; (semicolon)', 'tablegen' ),
+                ',' => __( ', (comma)', 'tablegen' ),
+                'tab' => __( '\t (tabulator)', 'tablegen' ),
             );
 
             /** This filter is documented in the WordPress function unzip_file() in wp-admin/includes/file.php */

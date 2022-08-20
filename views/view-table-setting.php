@@ -142,7 +142,7 @@ include 'attc-vars.php'; // includes all required variables
                                 <input type="hidden" name="config[show_tbl_desc]" id="config_show_tbl_desc" value="<?= !empty($show_tbl_desc) ? $show_tbl_desc: 'N'; ?>">
                             </li>
                         </ul>
-                        <button type="submit" id="attc-table-setting" class="attc_btn" name="attc-table-setting"><?= __('Save Settings', ATTC_TEXTDOMAIN) ;?></button>
+                        <button type="submit" id="attc-table-setting" class="attc_btn" name="attc-table-setting"><?= __('Save Settings', 'tablegen') ;?></button>
                     </div>
                 </form><!-- end form -->
             </div><!-- attc_table_setting_wrap-->

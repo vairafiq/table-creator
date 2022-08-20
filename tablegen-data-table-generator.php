@@ -7,7 +7,8 @@
 * Author: Exlac
 * Author URI: https://exlac.com
 * License: GPLv2 or later
-* Text Domain: table-generator-by-aazztech
+* Text Domain: tablegen
+* Domain Path: /languages
 */
 
 

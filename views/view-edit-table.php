@@ -97,7 +97,7 @@ $sub_array          = explode(',', $subs);
 
                         <textarea
                             class="attc_textarea"
-                            placeholder="<?php _e('edit', ATTC_TEXTDOMAIN) ?>"
+                            placeholder="<?php _e('edit', 'tablegen') ?>"
                             type="text" rows="2" cols="20"
                             name="table_values[<?= $i ?>][<?= $j ?>]"
                         ><?php echo isset($saved_content[$i][$j]) ? esc_html(trim($saved_content[$i][$j])) : ''; ?></textarea>
@@ -108,7 +108,7 @@ $sub_array          = explode(',', $subs);
                     <?php } // Ends the Primary loop eg. $i loop?>
                     </tbody>
                 </table>
-                <input type="submit" id="attc-create-table" class="attc_btn" name="attc-create-table" value="<?php  esc_html_e('Update Table', ATTC_TEXTDOMAIN);?>">
+                <input type="submit" id="attc-create-table" class="attc_btn" name="attc-create-table" value="<?php  esc_html_e('Update Table', 'tablegen');?>">
             </div>
         </div>
     </form>

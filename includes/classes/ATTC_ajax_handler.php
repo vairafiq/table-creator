@@ -150,7 +150,7 @@ class ATTC_ajax_handler {
             $t = !empty($_POST['attc_table_data']) ? $_POST['attc_table_data'] : array(); // cache all tbl data
             $t_opt = !empty($t['table_options']) ? $t['table_options'] : array(); // get all the tbl option
             $ID = !empty($t['table_id']) ? intval($t['table_id']) : null;
-            $name = !empty($t_opt['table_name']) ? sanitize_text_field($t_opt['table_name']) : esc_html__('No Name', ATTC_TEXTDOMAIN);
+            $name = !empty($t_opt['table_name']) ? sanitize_text_field($t_opt['table_name']) : esc_html__('No Name', 'tablegen');
             $description = !empty($t_opt['table_description']) ? sanitize_textarea_field($t_opt['table_description']) : '';
             $column = !empty($t_opt['current_cols']) ? absint($t_opt['current_cols']) : 0;
             $rows = !empty($t_opt['current_rows']) ? absint($t_opt['current_rows']) : 0;

@@ -13,7 +13,7 @@ $create_page = empty($_GET['action']) && 'edit' == empty($_GET['action']) ? true
 
 <div class="col-lg-6">
     <div class="table_info_form">
-        <div class="info_form_title"><h4><?= empty($_GET['action']) ? esc_html__('Add New Table', ATTC_TEXTDOMAIN): esc_html__('Edit Table', ATTC_TEXTDOMAIN); ?></h4></div>
+        <div class="info_form_title"><h4><?= empty($_GET['action']) ? esc_html__('Add New Table', 'tablegen'): esc_html__('Edit Table', 'tablegen'); ?></h4></div>
         <?php if ($create_page) { //  form tab only on create page ?>
             <form role="form" action="" method="post">
         <?php
@@ -21,7 +21,7 @@ $create_page = empty($_GET['action']) && 'edit' == empty($_GET['action']) ? true
         } ?>
             <div class="row">
                 <div class="col-md-8">
-                    <label for="table_name"><?php esc_html_e('Table Name', ATTC_TEXTDOMAIN); ?></label>
+                    <label for="table_name"><?php esc_html_e('Table Name', 'tablegen'); ?></label>
                     <input type="text" name="table[name]" id="table_name" value="<?= $name ?>" class="attc_input_field" placeholder="Enter a table name" tabindex="1">
 
 
@@ -29,7 +29,7 @@ $create_page = empty($_GET['action']) && 'edit' == empty($_GET['action']) ? true
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <label for="table_desc"><?php esc_html_e('Table Description (optional)', ATTC_TEXTDOMAIN); ?></label>
+                    <label for="table_desc"><?php esc_html_e('Table Description (optional)', 'tablegen'); ?></label>
                     <textarea id="table_description" class="attc_input_field" name="table[description]" rows="8" cols="80" placeholder="Enter a short description for a table"><?= $description ?></textarea>
                 </div>
             </div>
@@ -47,7 +47,7 @@ $create_page = empty($_GET['action']) && 'edit' == empty($_GET['action']) ? true
         <?php if ($create_page) { // show form tab only on create page?>
 
                 <div class="col-md-6">
-                    <input type="submit" name="attc-create-table" value="<?php esc_html_e('Create table', ATTC_TEXTDOMAIN) ?>" class="attc_btn">
+                    <input type="submit" name="attc-create-table" value="<?php esc_html_e('Create table', 'tablegen') ?>" class="attc_btn">
                     <!-- <button type="submit" class="attc_btn" name="button">Submit</button> -->
                 </div>
 

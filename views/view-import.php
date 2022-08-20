@@ -18,7 +18,7 @@ $tables = (!empty($args['tables']) && is_array($args['tables'])) ? $args['tables
                     <li class="active"><a href="#home" data-toggle="tab">
                             <p class="round-tabs one">
                                 <i class=" glyphicon glyphicon-edit"></i>
-                                <span><?php esc_html_e('CSV', ATTC_TEXTDOMAIN); ?></span>
+                                <span><?php esc_html_e('CSV', 'tablegen'); ?></span>
                             </p>
                         </a>
 

@@ -63,7 +63,7 @@ class ATTC_import {
         }
 
         $this->import_formats = array();
-        $this->import_formats['csv'] = __( 'CSV - Character-Separated Values', ATTC_TEXTDOMAIN );
+        $this->import_formats['csv'] = __( 'CSV - Character-Separated Values', 'tablegen' );
 
         add_action('attc_import_tab_menu', array($this, 'show_tab_menu'));
         add_action('attc_import_tab_content', array($this, 'attc_tab_content'), 10);
@@ -226,7 +226,7 @@ class ATTC_import {
         $errors = libxml_get_errors();
         libxml_clear_errors();
         if ( ! empty( $errors ) ) {
-            $output = '<strong>' . __( 'The imported file contains errors:', ATTC_TEXTDOMAIN ) . '</strong><br /><br />';
+            $output = '<strong>' . __( 'The imported file contains errors:', 'tablegen' ) . '</strong><br /><br />';
             foreach ( $errors as $error ) {
                 switch ( $error->level ) {
                     case LIBXML_ERR_WARNING:
@@ -317,7 +317,7 @@ class ATTC_import {
                     $json_error = $json_error_msg;
                 }
             }
-            $output = '<strong>' . __( 'The imported file contains errors:', ATTC_TEXTDOMAIN ) . "</strong><br /><br />JSON error: {$json_error}<br />";
+            $output = '<strong>' . __( 'The imported file contains errors:', 'tablegen' ) . "</strong><br /><br />JSON error: {$json_error}<br />";
             wp_die( $output, 'Import Error', array( 'response' => 200, 'back_link' => true ) );
         } else {
             // Specifically cast to an array again.

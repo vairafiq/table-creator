@@ -77,19 +77,19 @@ class ATTC_controller {
 
         if(!empty($_GET['added'])):
 
-            echo sprintf($html, __('The table has been created successfully!', ATTC_TEXTDOMAIN) );
+            echo sprintf($html, __('The table has been created successfully!', 'tablegen') );
 
         elseif(!empty($_GET['updated']) ):
 
-            echo sprintf($html, __('The table has been updated with the new changes successfully!', ATTC_TEXTDOMAIN) );
+            echo sprintf($html, __('The table has been updated with the new changes successfully!', 'tablegen') );
 
         elseif(!empty($_GET['deleted'])):
 
-            echo sprintf($html, __('The table has been deleted successfully!', ATTC_TEXTDOMAIN) );
+            echo sprintf($html, __('The table has been deleted successfully!', 'tablegen') );
 
         elseif(!empty($_GET['action']) && 'import' == $_GET['action'] && !empty($_GET['status']) && 'success' == $_GET['status']):
 
-            echo sprintf($html, __('The table has been imported successfully!', ATTC_TEXTDOMAIN) );
+            echo sprintf($html, __('The table has been imported successfully!', 'tablegen') );
 
         endif;
     }
@@ -189,8 +189,8 @@ class ATTC_controller {
 
     public function show_admin_menu(){
         add_menu_page(
-            __('All Tables', ATTC_TEXTDOMAIN),
-            __('Table Generator', ATTC_TEXTDOMAIN),
+            __('All Tables', 'tablegen'),
+            __('Table Generator', 'tablegen'),
             'manage_options',
             'table-generator-all',
             array($this, 'render_view'),
@@ -199,16 +199,16 @@ class ATTC_controller {
         );
 
         add_submenu_page('table-generator-all',
-            __('All Tables', ATTC_TEXTDOMAIN),
-            __('All Tables', ATTC_TEXTDOMAIN),
+            __('All Tables', 'tablegen'),
+            __('All Tables', 'tablegen'),
             'manage_options',
             'table-generator-all',
             array($this, 'render_view')
         );
 
         add_submenu_page('table-generator-all',
-            __('Create table', ATTC_TEXTDOMAIN),
-            __('Create table', ATTC_TEXTDOMAIN),
+            __('Create table', 'tablegen'),
+            __('Create table', 'tablegen'),
             'manage_options',
             'create-table-page',
             array($this, 'render_view')
@@ -216,24 +216,24 @@ class ATTC_controller {
 
 
         add_submenu_page('table-generator-all',
-            __('Export', ATTC_TEXTDOMAIN),
-            __('Export', ATTC_TEXTDOMAIN),
+            __('Export', 'tablegen'),
+            __('Export', 'tablegen'),
             'manage_options',
             'attc-export',
             array($this, 'show_export_view')
         );
 
         add_submenu_page('table-generator-all',
-            __('Import', ATTC_TEXTDOMAIN),
-            __('Import', ATTC_TEXTDOMAIN),
+            __('Import', 'tablegen'),
+            __('Import', 'tablegen'),
             'manage_options',
             'attc-import',
             array($this, 'show_import_view')
         );
 
         add_submenu_page('table-generator-all',
-            __('Get Extensions', ATTC_TEXTDOMAIN),
-            __('<span style="color: #ffc733;">Extensions</span>', ATTC_TEXTDOMAIN),
+            __('Get Extensions', 'tablegen'),
+            __('<span style="color: #ffc733;">Extensions</span>', 'tablegen'),
             'manage_options',
             'attc-extension',
             array($this, 'show_extension_view')

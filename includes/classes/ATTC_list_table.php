@@ -33,12 +33,12 @@ class ATTC_list_table extends WP_List_Table {
         // then those data will be displayed automatically, else add custom data for custom column  in $this->column_default
         $columns = array(
             // 'cb'	=> '<input type="checkbox" />',
-            'ID'	=> __('ID', ATTC_TEXTDOMAIN),
-            'name'	=> __('Name', ATTC_TEXTDOMAIN),
-            'description'	=> __('Description', ATTC_TEXTDOMAIN),
-            'author'	=> __('Author', ATTC_TEXTDOMAIN),
-            'shortcode'	=> __('Shortcode',ATTC_TEXTDOMAIN),
-            'date' => __('Created at',ATTC_TEXTDOMAIN)
+            'ID'	=> __('ID', 'tablegen'),
+            'name'	=> __('Name', 'tablegen'),
+            'description'	=> __('Description', 'tablegen'),
+            'author'	=> __('Author', 'tablegen'),
+            'shortcode'	=> __('Shortcode','tablegen'),
+            'date' => __('Created at','tablegen')
         );
         return $columns;
     }
@@ -54,8 +54,8 @@ class ATTC_list_table extends WP_List_Table {
     function column_name($item){
         //Build row actions
         $actions = array(
-            'edit' => sprintf('<a href="?page=%s&action=%s&table=%s">%s</a>', 'create-table-page','edit',$item['ID'], __('Edit', ATTC_TEXTDOMAIN) ),
-            'delete' => sprintf('<a href="?page=%s&action=%s&table=%s">%s</a>', $_REQUEST['page'],'delete',$item['ID'],__('Delete', ATTC_TEXTDOMAIN) )
+            'edit' => sprintf('<a href="?page=%s&action=%s&table=%s">%s</a>', 'create-table-page','edit',$item['ID'], __('Edit', 'tablegen') ),
+            'delete' => sprintf('<a href="?page=%s&action=%s&table=%s">%s</a>', $_REQUEST['page'],'delete',$item['ID'],__('Delete', 'tablegen') )
         );
 
         //Return the title contents
@@ -163,9 +163,9 @@ class ATTC_list_table extends WP_List_Table {
                 echo "</a></strong>";
 
                 echo "<div class='row-actions'><span class='edit'>";
-                echo sprintf('<a href="?page=%s&action=%s&table=%s">%s</a>','create-table-page','edit',$item['ID'], esc_html__('Edit', ATTC_TEXTDOMAIN));
+                echo sprintf('<a href="?page=%s&action=%s&table=%s">%s</a>','create-table-page','edit',$item['ID'], esc_html__('Edit', 'tablegen'));
                 echo "</span> | <span class='trash'>";
-                echo sprintf('<a class="confirmation" data-table_id="%s" href="#">%s</a>', $item['ID'], esc_html__('Delete', ATTC_TEXTDOMAIN));
+                echo sprintf('<a class="confirmation" data-table_id="%s" href="#">%s</a>', $item['ID'], esc_html__('Delete', 'tablegen'));
                 echo "</span></div></td>";
             }
             else {
