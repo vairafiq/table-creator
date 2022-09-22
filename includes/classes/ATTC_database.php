@@ -48,7 +48,11 @@ if (!class_exists('ATTC_database')):
             $this->table_name = $wpdb->prefix."at_table_creator";
             $this->meta_table = $wpdb->prefix."at_meta";
             $this->db_charset = $wpdb->get_charset_collate();
-            $this->db_version = "1.0";
+            $this->db_version = "1.1";
+
+            if( ! get_option( 'tablegen_db_updated' ) ){
+                add_action( 'admin_init', array( $this, 'update_database' ) );
+            }
         }
 
         /**
@@ -63,10 +67,21 @@ if (!class_exists('ATTC_database')):
         }
 
         /**
+         * Update rows to rows_no table column name
+         */
+        public function update_database(){
+            
+            global $wpdb;
+            $wpdb->query( "ALTER TABLE {$this->table_name} CHANGE `rows` `rows_no` INT(11)" );
+            update_option( 'tablegen_db_updated', $this->db_version );
+        }
+
+        /**
          * It creates custom table in the database
          */
         public function create_table(){
             $current_version = get_option('attc_db_version');
+
 //            $current_version = 5; // for test purpose only
             // vail out if the current version of the plugin and the version in the database is the same
             // and the table already exists in the database.

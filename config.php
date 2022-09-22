@@ -5,7 +5,7 @@
 global $wpdb;
 // Prohibit direct script loading.
 defined( 'ABSPATH' ) || die( 'No direct script access allowed!' );
-if ( !defined('ATTC_VERSION') ) { define('ATTC_VERSION', '1.3.0'); }
+if ( !defined('ATTC_VERSION') ) { define('ATTC_VERSION', '1.3.1'); }
 if ( !defined('ATTC_DIR') ) { define('ATTC_DIR', plugin_dir_path(__FILE__)); }
 if ( !defined('ATTC_URL') ) { define('ATTC_URL', plugin_dir_url(__FILE__)); }
 if ( !defined('ATTC_CLASS_DIR') ) { define('ATTC_CLASS_DIR', ATTC_DIR.'includes/classes/'); }

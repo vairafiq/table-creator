@@ -4,7 +4,7 @@ Donate link: https://exlac.com/
 Tags: table, table generator, data table, html table, responsive data table
 Requires at least: 4.0 
 Tested up to:  6.0
-Stable tag: 1.3.0
+Stable tag: 1.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ TableGen - Data Table Generator plugin allows you to create interactive sortable
 
 == Description ==
 
-👉 **[Plugin Demo](https://exlac.com/demos/tablegen/) | [Documentation](https://exlac.com/documentation/) | [Roadmap](https://exlac.com/roadmap/)** 👈
+👉 **[Plugin Demo](https://exlac.com/demos/tablegen/) | [Documentation](https://exlac.com/docs/import-google-sheet-to-wordpress-table/) | [Roadmap](https://exlac.com/roadmap/)** 👈
 
 Do you have a big data that you would like to show on your website? Now you can do that very easily using this awesome plugin. Also import your Google Sheet in a minute! 
 
@@ -68,6 +68,10 @@ So, why do you not give this plugin a try and see yourself how this plugin can m
 10. Example of normal table 
 
 == Changelog ==
+
+= 1.3.1 =
+
+* Fix - Table data not showing for old users
 
 = 1.3.0 =
 
