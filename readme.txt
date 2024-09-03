@@ -69,6 +69,10 @@ So, why do you not give this plugin a try and see yourself how this plugin can m
 
 == Changelog ==
 
+= 1.3.2 =
+
+* Fix - Table head, row-hover design
+
 = 1.3.1 =
 
 * Fix - Table data not showing for old users
