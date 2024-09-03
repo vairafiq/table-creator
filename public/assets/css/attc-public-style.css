@@ -179,10 +179,14 @@ div.dataTables_wrapper {
 }
 .default.normal .attc-thead{
     border-top: 1px solid #ededed;
+    background: #e7e7e7;;
 
 }
 .default.normal .attc-thead tr{
     border-bottom: 2px solid #ededed;
+}
+.default.normal .attc-tr-hover:hover{
+    background: #f5f5f5;
 }
 .default.normal .attc-thead tr th{
     font-weight: 600;
