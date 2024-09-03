@@ -106,7 +106,7 @@ if (!empty($args['table']['theme']['name'])  &&  false != get_option('attc_exten
                 $i = ('Y' == $t_head) ? 1 : 0;
                 for ($i; $i < $rows; $i++) { // Primary loop ($i loop) starts here. It will print one row per iteration ?>
 
-                    <?= '<tr>' ?>
+                    <tr class="<?php echo $hover == 'Y' ? 'attc-tr-hover' : 'attc-tr'; ?>">
 
                     <?php for ($j=0; $j < $cols; $j++){  // 1ST nested loop ($j loop)  starts. It will create all <td>(s) ?>
 
