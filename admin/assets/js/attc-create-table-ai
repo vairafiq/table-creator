@@ -1,0 +1,46 @@
+jQuery(document).ready(function($){
+
+
+$( '#attc_ai_table_create_form' ).on('submit', function (e) {
+        e.preventDefault();
+        var $this = $(this);
+        var $prompt = $this.find('#attc_ai_prompt').val();
+
+        const regex = /[a-z0-9].*\.[a-z]/;
+        if (!regex.test($prompt)) {
+            alert('The prompt should be clear about table configurations');
+            return;
+        }
+    
+        const form_data = new FormData();
+        // ajax action
+        form_data.append( 'action', 'get_table_config' );
+        form_data.append( 'prompt', $prompt );
+
+        $.ajax({
+            method: 'POST',
+            processData: false,
+            contentType: false,
+            // async: false,
+            url: bbp_site_data.ajax_url,
+            data: form_data,
+			beforeSend: function() {
+                $('#attc_ai_table_create_submit').html('<span>Generating... <span class="ai-loader"></span></span>');
+            },
+
+            success( response ) {
+                console.log( response );
+            },
+
+            error( error ) {
+                console.log( error );
+			    $('.bppm-review-tab-container').find('.review-loader').hide(); // hide loader
+            },
+        });
+
+
+    });
+
+ 
+
+});

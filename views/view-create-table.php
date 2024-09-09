@@ -65,9 +65,9 @@ $create_page = empty($_GET['action']) && 'edit' == empty($_GET['action']) ? true
     <div class="table_info_form">
         <div class="info_form_title"><h4 class="attc_gradient-text"><?= esc_html__('Create Table with AI', 'tablegen'); ?><img class="attc-ai-icon" src="<?php echo plugin_dir_url(__DIR__) . '/admin/assets/img/ai.png'; ?>" alt=""></h4></div>
 
-            <form role="form" action="" method="post">
-                <div class="attc_ai_table_create">
-                    <textarea name="attc-ai-prompt" id="attc-ai-prompt" class="attc_input_field" rows="8" cols="80" placeholder="Write table configuration"></textarea>
+            <form role="form" id="attc_ai_table_create_form" action="" method="post">
+                <div class="attc-ai-prompt-container">
+                    <textarea name="attc-ai-prompt" id="attc_ai_prompt" class="attc_input_field" rows="8" cols="80" placeholder="Write table configuration"></textarea>
                 </div>
 
                 <div class="attc_notice">
@@ -75,7 +75,7 @@ $create_page = empty($_GET['action']) && 'edit' == empty($_GET['action']) ? true
                 </div>
 
                 <div class="">
-                    <input type="submit" name="attc-ai-table-create" value="<?php esc_html_e('Create with AI', 'tablegen') ?>" class="attc_btn_alt">
+                    <input type="submit" id="attc_ai_table_create_submit" value="<?php esc_html_e('Create with AI', 'tablegen') ?>" class="attc_btn_alt">
                 </div>
             </form>
 
