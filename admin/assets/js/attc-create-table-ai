@@ -12,31 +12,32 @@ $( '#attc_ai_table_create_form' ).on('submit', function (e) {
             return;
         }
     
-        const form_data = new FormData();
-        // ajax action
-        form_data.append( 'action', 'get_table_config' );
-        form_data.append( 'prompt', $prompt );
-
-        $.ajax({
-            method: 'POST',
-            processData: false,
-            contentType: false,
-            // async: false,
-            url: bbp_site_data.ajax_url,
-            data: form_data,
-			beforeSend: function() {
-                $('#attc_ai_table_create_submit').html('<span>Generating... <span class="ai-loader"></span></span>');
-            },
-
-            success( response ) {
-                console.log( response );
-            },
-
-            error( error ) {
-                console.log( error );
-			    $('.bppm-review-tab-container').find('.review-loader').hide(); // hide loader
-            },
-        });
+        if ($prompt) {
+            $.ajax({
+                url: '',
+                type: 'POST',  
+                dataType: 'json',  
+                contentType: 'application/json', 
+                data: JSON.stringify({
+                    prompt: $prompt 
+                }),
+                headers: {
+                    'Authorization': '',  
+                },
+                success: function(response) {
+                    
+                    console.log(response);
+                    
+                },
+                error: function(error) {
+                    
+                    console.error(error);
+                    
+                }
+            });
+        } else {
+            alert('Please enter a prompt before submitting.');
+        }
 
 
     });
