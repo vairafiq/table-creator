@@ -11,7 +11,7 @@ $create_page = empty($_GET['action']) && 'edit' == empty($_GET['action']) ? true
 
 
 
-<div class="col-lg-6">
+<div class="col-lg-6 mt-15">
     <div class="table_info_form">
         <div class="info_form_title"><h4><?= empty($_GET['action']) ? esc_html__('Add New Table', 'tablegen'): esc_html__('Edit Table', 'tablegen'); ?></h4></div>
         <?php if ($create_page) { //  form tab only on create page ?>
@@ -57,3 +57,29 @@ $create_page = empty($_GET['action']) && 'edit' == empty($_GET['action']) ? true
             </div><!-- info_form_title -->
     </div><!-- table_info_form -->
 </div><!-- col-lg-6" -->
+
+
+<!-- AI table creator -->
+<?php if ($create_page) { //  form tab only on create page ?>
+<div class="col-lg-6 mt-15">
+    <div class="table_info_form">
+        <div class="info_form_title"><h4 class="attc_gradient-text"><?= esc_html__('Create Table with AI', 'tablegen'); ?><img class="attc-ai-icon" src="<?php echo plugin_dir_url(__DIR__) . '/admin/assets/img/ai.png'; ?>" alt=""></h4></div>
+
+            <form role="form" action="" method="post">
+                <div class="attc_ai_table_create">
+                    <textarea name="attc-ai-prompt" id="attc-ai-prompt" class="attc_input_field" rows="8" cols="80" placeholder="Write table configuration"></textarea>
+                </div>
+
+                <div class="attc_notice">
+                    <p>◯ Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, tenetur.</p>
+                </div>
+
+                <div class="">
+                    <input type="submit" name="attc-ai-table-create" value="<?php esc_html_e('Create with AI', 'tablegen') ?>" class="attc_btn_alt">
+                </div>
+            </form>
+
+        </div>
+    </div><!-- table_info_form -->
+</div><!-- col-lg-6" -->
+<?php } ?>
