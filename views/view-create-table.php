@@ -67,15 +67,19 @@ $create_page = empty($_GET['action']) && 'edit' == empty($_GET['action']) ? true
 
             <form role="form" id="attc_ai_table_create_form" action="" method="post">
                 <div class="attc-ai-prompt-container">
-                    <textarea name="attc-ai-prompt" id="attc_ai_prompt" class="attc_input_field" rows="8" cols="80" placeholder="Write table configuration"></textarea>
+                    <textarea name="attc-ai-prompt" id="attc_ai_prompt" class="attc_input_field" rows="8" cols="80" placeholder="e.g. list of best laptops"></textarea>
                 </div>
 
                 <div class="attc_notice">
-                    <p>◯ Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, tenetur.</p>
+                    <p>Please write what type of data you need for your table</p>
                 </div>
 
-                <div class="">
-                    <input type="submit" id="attc_ai_table_create_submit" value="<?php esc_html_e('Create with AI', 'tablegen') ?>" class="attc_btn_alt">
+                <div class="mt-15 d-flex attc-flex attc-between">
+                    <button type="submit" id="attc_ai_table_create_submit" class="attc_btn_alt"><?php esc_html_e('Create with AI', 'tablegen'); ?></button>
+                    <div class="">
+                        <button id="attc_ai_copy_shortcode" class="attc_btn d-none"><?php esc_html_e('Use in New Page', 'tablegen'); ?></button>
+                        <button id="attc_ai_use_in_page" class="attc_btn d-none"><?php esc_html_e('Copy Shortcode', 'tablegen'); ?></button>
+                    </div>
                 </div>
             </form>
 

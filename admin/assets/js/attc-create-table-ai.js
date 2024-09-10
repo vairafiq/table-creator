@@ -23,7 +23,14 @@ $( '#attc_ai_table_create_form' ).on('submit', function (e) {
             // async: false,
             url: attc_aiobj.ajax_url,
             data: form_data,
+            beforeSend() {
+                $('#attc_ai_table_create_submit').empty().append('<span class="loader"></span>');
+            },
             success( response ) {
+
+                $('#attc_ai_table_create_submit').empty().append('Create with AI');
+                $('#attc_ai_copy_shortcode').show();
+                $('#attc_ai_use_in_page').show();
 
                 if ( response.error ) {
                     console.log({ response });
@@ -38,6 +45,7 @@ $( '#attc_ai_table_create_form' ).on('submit', function (e) {
             },
 
             error( response ) {
+                $('#attc_ai_table_create_submit').empty().append('Create with AI');
                 console.log({ response });
             },
         });

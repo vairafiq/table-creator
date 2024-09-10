@@ -37,7 +37,8 @@ class ATTC_ajax_handler {
         $name            = 'AI Table';
         $description     = 'AI table description';
 
-        $command = "I am creating a table " . $prompt . ". Use appropriate HTML tags to show a pretty format. Don't add anything like 'Here's a possible opening statement' just give me the final output.";
+        //$command = "I am creating a table " . $prompt . ". Use appropriate HTML tags to show a pretty format. Don't add anything like 'Here's a possible opening statement' just give me the final output.";
+        $command = "I am creating a table " . $prompt . ". Use appropriate HTML tags(use table formate including table borders) to show a pretty format. Don't add anything like 'Here's a possible opening statement' just give me the final output.";
 
 
         $response = tablegen_get_response_from_groq( $command );
