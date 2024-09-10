@@ -206,3 +206,65 @@ endif;
 
         endif;
 
+
+    function tablegen_get_response_from_groq( $command ) {
+    
+        $key = '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';
+    
+        $url = 'https://api.groq.com/openai/v1/chat/completions';
+    
+        $headers = array(
+            'user-agent' => md5( esc_url( home_url() ) ),
+            'Accept' => 'application/json',
+            'Authorization' => 'Bearer ' . $key,
+            'Content-Type' => 'application/json'
+        );
+    
+        $body = [
+            'model' => 'llama3-70b-8192', //llama3-70b-8192, llama-3.1-70b-versatile
+            'messages' => [
+                [
+                    'role' => 'system',
+                    'content' => 'You are a helpful assistant.'
+                ],
+                [
+                    'role' => 'user',
+                    'content' => $command,
+                ]
+            ],
+            'temperature' => 0.5,
+            'max_tokens' => 1500,
+            'top_p' => 1,
+            'stream' => false,
+            'stop' => null,
+        ];
+    
+        $config = array(
+            'method' => 'POST',
+            'timeout' => 30,
+            'redirection' => 5,
+            'httpversion' => '1.0',
+            'headers' => $headers,
+            'body' => json_encode($body),
+        );
+    
+        $response_body = array();
+    
+        try {
+            $response = wp_remote_post( $url, $config );
+            
+            // return $response;
+            if ( is_wp_error( $response ) ) {
+                return false;
+            } else {
+                $response_body = json_decode( $response['body'], true );
+                if ( isset( $response_body['choices'][0]['message']['content'] ) ) {
+                    return $response_body['choices'][0]['message']['content'];
+                } else {
+                    return false;
+                }
+            }
+        } catch ( Exception $e ) {
+            return false;
+        }
+    }

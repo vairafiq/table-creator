@@ -32,6 +32,11 @@ class ATTC_enqueue {
                 'jquery-ui-resizable',
                 'attc-bootstrap-js',
             ), ATTC_VERSION, true );
+            wp_enqueue_script( 'attc-ai-js', ATTC_ADMIN_ASSETS . 'js/attc-create-table-ai.js', array(
+                'jquery',
+                'jquery-ui-resizable',
+                'attc-bootstrap-js',
+            ), ATTC_VERSION, true );
 
             $attc_obj = array(
                 'nonceAction' => $ATTC->helper->nonceAction(),
@@ -41,6 +46,7 @@ class ATTC_enqueue {
                 'ajax_url'  => admin_url( 'admin-ajax.php' ),
             );
             wp_localize_script( 'attc-main-js', 'attc_obj', $attc_obj );
+            wp_localize_script( 'attc-ai-js', 'attc_aiobj', $attc_obj );
 
             wp_register_script( 'attc-import-js', ATTC_ADMIN_ASSETS . 'js/attc-import.js', array(
                 'jquery',

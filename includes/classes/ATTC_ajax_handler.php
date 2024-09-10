@@ -20,8 +20,58 @@ class ATTC_ajax_handler {
         add_action('wp_ajax_update_tablegen_data', array($this, 'update_table'));
 
         add_action('wp_ajax_tablegen_imort_from_google', array($this, 'import_from_google'));
+        add_action('wp_ajax_tablegen_ai_table', array($this, 'tablegen_ai_table'));
 
     }
+
+    public function tablegen_ai_table() {
+
+        if( ! current_user_can( 'manage_options' ) ) {
+            wp_send_json([
+                'error' => true,
+                'msg' => __( 'You are not allowed to import', 'tablegen-google-sheet-integration' ),
+            ]);
+        }
+        
+        $prompt          = ! empty( $_POST['prompt'] ) ? sanitize_text_field( wp_unslash( $_POST['prompt'] ) ) : '';
+        $name            = 'AI Table';
+        $description     = 'AI table description';
+
+        $command = "I am creating a table " . $prompt . ". Use appropriate HTML tags to show a pretty format. Don't add anything like 'Here's a possible opening statement' just give me the final output.";
+
+
+        $response = tablegen_get_response_from_groq( $command );
+
+        wp_send_json($response);
+        
+        if( empty( $prompt ) ) {
+            wp_send_json([
+                'error' => true,
+                'msg' => __( 'Please fill up the required field', 'tablegen-google-sheet-integration' ),
+            ]);
+        }
+
+        $data = [];
+        $controller = new ATTC_controller();
+
+        $import = $controller->_import_insert_or_replace_table( 'json', $data, $name, $description, '', 'add');
+
+
+        if( is_wp_error( $import ) ) {
+            wp_send_json([
+                'error' => true,
+                'msg' => __( 'Error importing data', 'tablegen-google-sheet-integration' ),
+            ]);
+        }
+
+        wp_send_json([
+            'msg' => __( 'Successfully imported to a new table', 'tablegen-google-sheet-integration' ),
+        ]);
+
+    }
+
+
+ 
 
     public function import_from_google() {
        
