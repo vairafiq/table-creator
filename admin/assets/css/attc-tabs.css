@@ -521,6 +521,28 @@ input.attc_input_field[type="number"] {
     color: #fff;
     text-decoration: none;
 }
+.attc_btn_classic {
+    line-height: 45px;
+    padding: 15px 25px;
+    border: 1px solid #e74c3c !important;
+    border-radius: 3px;
+    background: #fff;
+    background-size: 200% auto;
+    color: #e74c3c;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    box-shadow: 0 0 0;
+    outline: 0;
+    font-size: 14px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.attc_btn_classic:hover {
+    background-position: right center;
+    background-color: #e74c3c10;
+    text-decoration: none;
+}
 
 .attc_gradient-text {
     background: linear-gradient(to right, #D31027 0%, #4638ea 51%, #D31027 100%);
@@ -559,9 +581,10 @@ input.attc_input_field[type="number"] {
     display: inline-block;
     --base-color: #D31027;
     margin-bottom: -17px;
-  }
-  .loader::before {
-    content: '';  
+}
+
+.loader::before {
+    content: '';
     left: 0;
     top: 0;
     position: absolute;
@@ -573,9 +596,10 @@ input.attc_input_field[type="number"] {
     background-repeat: no-repeat;
     box-sizing: border-box;
     animation: rotationBack 3s linear infinite;
-  }
-  .loader::after {
-    content: '';  
+}
+
+.loader::after {
+    content: '';
     left: 35px;
     top: 15px;
     position: absolute;
@@ -587,20 +611,24 @@ input.attc_input_field[type="number"] {
     background-repeat: no-repeat;
     box-sizing: border-box;
     animation: rotationBack 4s linear infinite reverse;
-  }
-  @keyframes rotationBack {
+}
+
+@keyframes rotationBack {
     0% {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
+
     100% {
-      transform: rotate(-360deg);
+        transform: rotate(-360deg);
     }
-  }  
+}
+
 /* loader end */
 
 .attc-flex {
     display: flex;
 }
+
 .attc-between {
     justify-content: space-between;
 }
