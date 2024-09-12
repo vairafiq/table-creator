@@ -21,9 +21,38 @@ class ATTC_ajax_handler {
 
         add_action('wp_ajax_tablegen_imort_from_google', array($this, 'import_from_google'));
         add_action('wp_ajax_tablegen_ai_table', array($this, 'tablegen_ai_table'));
-
+        add_action('wp_ajax_create_new_page_with_data', array($this, 'ajax_create_new_page_with_data'));
     }
 
+    // create new page with table data
+    public function ajax_create_new_page_with_data() {
+    
+        // Get the data from the AJAX request
+        $title = sanitize_text_field($_POST['title']);
+        $content = wp_kses_post($_POST['content']);
+    
+        // Create a new page
+        $new_page_id = wp_insert_post(array(
+            'post_title'    => $title,
+            'post_content'  => $content,
+            'post_status'   => 'draft',  // also it can be 'publish'
+            'post_type'     => 'page',
+        ));
+    
+        // Check if the page was created successfully
+        if (!is_wp_error($new_page_id)) {
+            wp_send_json_success(array('redirect_url' => get_edit_post_link($new_page_id, '')));
+        } else {
+            wp_send_json_error(array('message' => 'Page creation failed.'));
+        }
+    
+    }
+    
+
+    
+
+
+    // create table (generate data with ai)
     public function tablegen_ai_table() {
 
         if( ! current_user_can( 'manage_options' ) ) {
@@ -38,7 +67,7 @@ class ATTC_ajax_handler {
         $description     = 'AI table description';
 
         //$command = "I am creating a table " . $prompt . ". Use appropriate HTML tags to show a pretty format. Don't add anything like 'Here's a possible opening statement' just give me the final output.";
-        $command = "I am creating a table " . $prompt . ". Use appropriate HTML tags(use table formate including table borders) to show a pretty format. Don't add anything like 'Here's a possible opening statement' just give me the final output.";
+        $command = "I am creating a table " . $prompt . ". Use appropriate HTML tags(use table formate including table borders and all text should align left including heading names) to show a pretty format. Don't add anything like 'Here's a possible opening statement' just give me the final output.";
 
 
         $response = tablegen_get_response_from_groq( $command );

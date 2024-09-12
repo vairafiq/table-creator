@@ -77,8 +77,8 @@ $table_id = $table ? $table['ID'] : 'id not found';
                 <div class="mt-15 d-flex attc-flex attc-between">
                     <button type="submit" id="attc_ai_table_create_submit" class="attc_btn_alt"><?php esc_html_e('Create with AI', 'tablegen'); ?></button>
                     <div class="attc_response_actions d-none">
-                        <span id="attc_ai_copy_shortcode" class="attc_btn_classic"><?php echo '[attc id='.$table_id.']'; esc_html_e('Copy Shortcode', 'tablegen'); ?></span>
-                        <a href="<?php echo esc_url(admin_url('post-new.php?post_type=page')); ?>" id="attc_ai_use_in_page" class="attc_btn_classic" target="_blank"><?php esc_html_e('Use in New Page', 'tablegen'); ?></a>
+                        <span id="attc_ai_copy_sourcecode" class="attc_btn_classic"><?php esc_html_e('Copy Table', 'tablegen'); ?></span>
+                        <span id="attc_ai_use_in_page" class="attc_btn_classic"><?php esc_html_e('Use in New Page', 'tablegen'); ?></span>
                     </div>
                 </div>
             </form>
